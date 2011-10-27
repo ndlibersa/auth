@@ -158,20 +158,6 @@ if ($step == "3"){
 
 	}
 
-	if (count($errorMessage) > 0){
-		$step="3";
-	}
-
-
-}else if ($step == "5"){
-
-	//first, validate all required fields are filled in
-	$session_timeout = trim($_POST['session_timeout']);
-
-	$database_host = $_POST['database_host'];
-	$database_name = $_POST['database_name'];
-	$database_username = $_POST['database_username'];
-	$database_password = trim($_POST['database_password']);
 
 	//only continue if there were no errors this far
 	if (count($errorMessage) > 0){
@@ -207,7 +193,6 @@ if ($step == "3"){
 	if (count($errorMessage) > 0){
 		$step="3";
 	}
-
 
 }
 
