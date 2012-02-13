@@ -63,7 +63,7 @@ switch ($_GET['action']) {
 				<input type='password' id='passwordReenter' value="" style='width:110px;'/>
 				<br />
 				<label for='adminInd' class='formLabel'><b>Admin?</b></label>
-				<input type='checkbox' id='adminInd' value='1' <?php echo $adminInd; ?> />
+				<input type='checkbox' id='adminInd' value='Y' <?php echo $adminInd; ?> />
 				<br />
 			</div>
 

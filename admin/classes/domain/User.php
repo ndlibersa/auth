@@ -28,7 +28,7 @@ class User extends DatabaseObject {
 
 	//used only for allowing access to admin page
 	public function isAdmin(){
-		if ($this->adminInd == '1'){
+		if ($this->adminInd == 'Y'){
 			return true;
 		}else{
 			return false;

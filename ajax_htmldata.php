@@ -41,7 +41,7 @@ switch ($_GET['action']) {
 				<?php
 
 				foreach($usersArray as $userArray) {
-					if ($userArray['adminInd'] =='1'){
+					if ($userArray['adminInd'] =='Y'){
 						$isAdmin='Y';
 					}else{
 						$isAdmin='N';
@@ -50,7 +50,7 @@ switch ($_GET['action']) {
 					echo "<tr>";
 					echo "<td>" . $userArray['loginID'] . "</td>";
 					echo "<td>" . $isAdmin . "</td>";
-					echo "<td><a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=" . $userArray['loginID'] . "&height=225&width=315&modal=true' class='thickbox'><img src='images/edit.gif' alt='edit password or admin status' title='edit password or admin status'></a></td>";
+					echo "<td><a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=" . $userArray['loginID'] . "&height=230&width=315&modal=true' class='thickbox'><img src='images/edit.gif' alt='edit password or admin status' title='edit password or admin status'></a></td>";
 					echo "<td><a href='javascript:void(0);' class='deleteUser' id='" . $userArray['loginID'] . "'><img src='images/cross.gif' alt='remove' title='remove'></a></td>";
 					echo "</tr>";
 				}

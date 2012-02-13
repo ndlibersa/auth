@@ -97,7 +97,7 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 
 }else{
 
-	if ((!$user->isAdmin)){
+	if ($user->getOpenSession()){
 		header('Location: index.php?service=admin.php&invalid');
 	}else{
 		header('Location: index.php?service=admin.php&admin');

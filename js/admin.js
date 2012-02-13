@@ -72,7 +72,7 @@ function submitUserForm(){
   		myReturn="1";
   	}
 
-  	if ($("#password").val() == ''){
+  	if (($("#editLoginID").val() == '') && (($("#password").val() == ''))){
   		$("#span_errors").html('Password is required');
   		myReturn="1";
   	}
