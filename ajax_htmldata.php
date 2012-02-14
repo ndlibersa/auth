@@ -41,7 +41,7 @@ switch ($_GET['action']) {
 				<?php
 
 				foreach($usersArray as $userArray) {
-					if ($userArray['adminInd'] =='Y'){
+					if ($userArray['adminInd'] =='Y' || $userArray['adminInd'] == '1'){
 						$isAdmin='Y';
 					}else{
 						$isAdmin='N';
