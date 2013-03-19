@@ -25,25 +25,25 @@ if ($step == "3"){
 	}else{
 
 		//first check connecting to host
-		$link = @mysql_connect("$database_host", "$database_username", "$database_password");
+		$link = mysql_connect("$database_host", "$database_username", "$database_password");
 		if (!$link) {
 			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysql_error();
 		}else{
 
 			//next check that the database exists
-			$dbcheck = @mysql_select_db("$database_name");
+			$dbcheck = mysql_select_db("$database_name");
 			if (!$dbcheck) {
 				$errorMessage[] = "Unable to access the database '" . $database_name . "'.  Please verify it has been created.<br />MySQL Error: " . mysql_error();
 			}else{
 
 				//make sure the tables don't already exist - otherwise this script will overwrite all of the data!
-				$query = "SELECT count(*) count FROM information_schema.`COLUMNS` WHERE table_schema = '" . $database_name . "' AND table_name='Session'";
+				$query = "SELECT count(*) count FROM information_schema.`TABLES` WHERE table_schema = '" . $database_name . "' AND table_name='User' and table_rows > 0";
 
 				//if User table exists, error out
 				if (!$row = mysql_fetch_array(mysql_query($query))){
 					$errorMessage[] = "Please verify your database user has access to select from the information_schema MySQL metadata database.";
 				}else{
-					if ($row['count'] > 0){
+					if ($row['count'] > 0 ){
 						$errorMessage[] = "The Authentication tables already exist.  If you intend to upgrade, please run upgrade.php instead.  If you would like to perform a fresh install you will need to manually drop all of the Authentication tables in this schema first.";
 					}else{
 
@@ -137,13 +137,13 @@ if ($step == "3"){
 	}else{
 
 		//first check connecting to host
-		$link = @mysql_connect("$database_host", "$database_username", "$database_password");
+		$link = mysql_connect("$database_host", "$database_username", "$database_password");
 		if (!$link) {
 			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysql_error();
 		}else{
 
 			//next check that the database exists
-			$dbcheck = @mysql_select_db("$database_name");
+			$dbcheck = mysql_select_db("$database_name");
 			if (!$dbcheck) {
 				$errorMessage[] = "Unable to access the database '" . $database_name . "'.  Please verify it has been created.<br />MySQL Error: " . mysql_error();
 			}else{
