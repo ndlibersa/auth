@@ -211,6 +211,10 @@ if(array_key_exists('admin', $_GET)){
 <br />
 <br />
 
+<script type="text/javascript">
+//give focus to login form
+document.getElementById('loginID').focus();
+</script>
 <script type="text/javascript" src="js/index.js"></script>
 
 </body>
