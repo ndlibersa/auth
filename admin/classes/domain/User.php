@@ -67,37 +67,67 @@ class User extends DatabaseObject {
 		$util = new Utility();
 		$config = new Configuration();
 
-		//first verify the password is correct
-		//get the hashed password
-		$pwh = $util->hashString('sha512', $this->passwordPrefix . $password);
+		if($config->ldap->ldap_enabled=="Y"){
+			$host = $config->ldap->host;
+			$ldaprdn  = $config->ldap->base_dn;     // ldap rdn or dn
+			$ldappass = $password;  // associated password
+			$filter = "(".$config->ldap->search_key."=".$this->loginID.")";
 
-		//password failed!!
-		if ($this->password != $pwh){
-			return false;
+			// connect to ldap server
+			$ldapconn = ldap_connect($host)
+			    or die("Could not connect to LDAP server.");
 
-		//passed password test
-		}else{
+			if ($ldapconn) {
 
-			//create new session
-			$sessionID = $util->randomString(100);
+			    // binding to ldap server
+			    //$ldapbind = ldap_bind($ldapconn, $ldaprdn, $ldappass); 
+			      $ldapbind = ldap_bind($ldapconn);
+			    // verify binding
+			    if ($ldapbind) {
+				//echo "LDAP bind successful...";
+				$ldapSearch = ldap_search($ldapconn, $ldaprdn, $filter);
+				if($ldapSearch){
+					$ldap_result = ldap_get_entries($ldapconn, $ldapSearch);
 
-			$session = new Session();
-			$session->sessionID = $sessionID;
-			$session->loginID = $this->loginID;
-			$session->timestamp = date( 'Y-m-d H:i:s' );
+					$success = ldap_bind($ldapconn, $ldap_result[0]['dn'], $ldappass);
+					//print_r($ldap_result);
+					if(!$success){ return false;}
+				}
+				else{
+				    return false;
+				}
+			    }
+			}
+		}else{ // built-in auth	
+			//verify the password is correct
+			//get the hashed password
+			$pwh = $util->hashString('sha512', $this->passwordPrefix . $password);
 
-			$session->save();
-
-			//also set the cookie
-			$util->setSessionCookie($sessionID, time() + $config->settings->timeout);
-			$util->setLoginCookie($this->loginID, time() + $config->settings->timeout);
-
-			//also set session variable
-			$_SESSION['loginID'] = $this->loginID;
-
-			return true;
+			//password failed!!
+			if ($this->password != $pwh){
+				return false;
+			}
 		}
+		//passed password test
 
+		//create new session
+		$sessionID = $util->randomString(100);
+
+		$session = new Session();
+		$session->sessionID = $sessionID;
+		$session->loginID = $this->loginID;
+		$session->timestamp = date( 'Y-m-d H:i:s' );
+
+		$session->save();
+
+		//also set the cookie
+		$util->setSessionCookie($sessionID, time() + $config->settings->timeout);
+		$util->setLoginCookie($this->loginID, time() + $config->settings->timeout);
+
+		//also set session variable
+		$_SESSION['loginID'] = $this->loginID;
+
+		return true;
 	}
 
 
