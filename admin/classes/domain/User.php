@@ -71,31 +71,53 @@ class User extends DatabaseObject {
 			$host = $config->ldap->host;
 			$ldaprdn  = $config->ldap->base_dn;     // ldap rdn or dn
 			$ldappass = $password;  // associated password
-			$filter = "(".$config->ldap->search_key."=".$this->loginID.")";
+			$filter = "(".$config->ldap->search_key."=".$this->loginID.")"; //search filter
+			$ldapport = $config->ldap->port; //ldap server port
+			$bindAccount = $config->ldap->bindAccount; //bind account
+			$bindPass = $config->ldap->bindPass; //bind password
 
-			// connect to ldap server
-			$ldapconn = ldap_connect($host)
-			    or die("Could not connect to LDAP server.");
+			if($ldapport != ''){
+				// connect to ldap server
+				$ldapconn = ldap_connect($host, $ldapport)
+				    or die("Could not connect to LDAP server.");
+				
+			}else{
+				$ldapconn = ldap_connect($host)
+				    or die("Could not connect to LDAP server.");
+			}
 
-			if ($ldapconn) {
+			ldap_set_option ($ldapconn, LDAP_OPT_REFERRALS, 0);
+			ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
+			
+			if ($ldapconn) {	
+				if($bindAccount != ""){
+					if($bindPass == ''){
+						error_log("A bind password must be provided with a bind account");
+						die("There is a problem with the LDAP configuration, contact your server administrator.");
+					}
+					//bind to ldap server
+					$ldapbind = ldap_bind($ldapconn, $bindAccount, $bindPass);
 
-			    // binding to ldap server
-			    //$ldapbind = ldap_bind($ldapconn, $ldaprdn, $ldappass); 
-			      $ldapbind = ldap_bind($ldapconn);
-			    // verify binding
+				}else{
+				    // binding to ldap server
+				    //$ldapbind = ldap_bind($ldapconn, $ldaprdn, $ldappass); 
+				    $ldapbind = ldap_bind($ldapconn);
+				    // verify binding
+				}
+			    
 			    if ($ldapbind) {
-				//echo "LDAP bind successful...";
-				$ldapSearch = ldap_search($ldapconn, $ldaprdn, $filter);
-				if($ldapSearch){
-					$ldap_result = ldap_get_entries($ldapconn, $ldapSearch);
+					//echo "LDAP bind successful...";
+					$ldapSearch = ldap_search($ldapconn, $ldaprdn, $filter);
+					if($ldapSearch){
+						$ldap_result = ldap_get_entries($ldapconn, $ldapSearch);
 
-					$success = ldap_bind($ldapconn, $ldap_result[0]['dn'], $ldappass);
-					//print_r($ldap_result);
-					if(!$success){ return false;}
-				}
-				else{
-				    return false;
-				}
+						$success = ldap_bind($ldapconn, $ldap_result[0]['dn'], $ldappass);
+						//print_r($ldap_result);
+						if(!$success){ return false;}
+					}
+					else{
+					    return false;
+					}
 			    }
 			}
 		}else{ // built-in auth	
