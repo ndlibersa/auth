@@ -76,18 +76,19 @@ class User extends DatabaseObject {
 			$bindAccount = $config->ldap->bindAccount; //bind account
 			$bindPass = $config->ldap->bindPass; //bind password
 
+			// connect to ldap server
 			if($ldapport != ''){
-				// connect to ldap server
 				$ldapconn = ldap_connect($host, $ldapport)
 				    or die("Could not connect to LDAP server.");
-				
+
+				ldap_set_option ($ldapconn, LDAP_OPT_REFERRALS, 0);
+				ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
+
 			}else{
 				$ldapconn = ldap_connect($host)
 				    or die("Could not connect to LDAP server.");
 			}
 
-			ldap_set_option ($ldapconn, LDAP_OPT_REFERRALS, 0);
-			ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
 			
 			if ($ldapconn) {	
 				if($bindAccount != ""){
@@ -108,16 +109,19 @@ class User extends DatabaseObject {
 			    if ($ldapbind) {
 					//echo "LDAP bind successful...";
 					$ldapSearch = ldap_search($ldapconn, $ldaprdn, $filter);
+					
 					if($ldapSearch){
 						$ldap_result = ldap_get_entries($ldapconn, $ldapSearch);
 
 						$success = ldap_bind($ldapconn, $ldap_result[0]['dn'], $ldappass);
-						//print_r($ldap_result);
+
 						if(!$success){ return false;}
 					}
 					else{
 					    return false;
 					}
+			    }else{
+				return false;
 			    }
 			}
 		}else{ // built-in auth	
