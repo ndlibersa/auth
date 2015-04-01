@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-01 15:10+0100\n"
-"PO-Revision-Date: 2015-04-01 15:13+0100\n"
+"POT-Creation-Date: 2015-04-01 15:23+0100\n"
+"PO-Revision-Date: 2015-04-01 15:23+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -29,7 +29,19 @@ msgstr "Ne peut pas asigner une clé indefini ("
 
 #: admin/classes/common/Object.php:72
 msgid "Cannot get value for undefined key ("
+msgstr "Ne peut pas récupérer une clé indefini ("
+
+#: admin/classes/domain/User.php:82 admin/classes/domain/User.php:89
+msgid "Could not connect to LDAP server."
+msgstr "Ne pouvait pas se connecter au serveur LDAP."
+
+#: admin/classes/domain/User.php:97
+msgid ""
+"There is a problem with the LDAP configuration, contact your server "
+"administrator."
 msgstr ""
+"Il y a un problème avec la configuration LDAP, contactez à votre "
+"administrateur."
 
 #: index.php:54
 msgid "You are successfully logged out of the system."
