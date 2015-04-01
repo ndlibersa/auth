@@ -48,7 +48,7 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 <script type="text/javascript" src="js/common.js"></script>
 </head>
 <body>
-<noscript><font face=arial>JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then <a href="">try again</a>. </font></noscript>
+<noscript><font face=arial><?= _("JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then")." <a href=''>"._("try again")."</a>."?></font></noscript>
 
 <center>
 <form name="reportlist" method="post" action="report.php">
@@ -62,18 +62,18 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 	<div class='bordered' style='width:447px;margin-left:2px;'>
 
 		<br />
-		<div class='headerText' style='text-align: left;margin:0px 60px 3px 60px;'>Users</div>
-		<div class='smallDarkRedText' style='margin-bottom:5px;'>* Login ID must match the login ID set up in the modules</div>
+		<div class='headerText' style='text-align: left;margin:0px 60px 3px 60px;'><?= _("Users")?></div>
+		<div class='smallDarkRedText' style='margin-bottom:5px;'>* <?= _("Login ID must match the login ID set up in the modules")?></div>
 
 
 		<div style='text-align:left;margin:0px 60px 60px 60px;' id='div_users'>
 		<br />
 		<br />
-		<img src='images/circle.gif'>  <span style='font-size:90%'>Processing...</span>
+		<img src='images/circle.gif'>  <span style='font-size:90%'><?= _("Processing...")?></span>
 		</div>
 	</div>
 
-	<div class='smallerText' style='text-align:center; margin-top:13px;'><a href='index.php'>Login page</a></div>
+	<div class='smallerText' style='text-align:center; margin-top:13px;'><a href='index.php'><?= _("Login page")?></a></div>
 
 
 </form>

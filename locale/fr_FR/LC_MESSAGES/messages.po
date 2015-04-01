@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-01 15:23+0100\n"
-"PO-Revision-Date: 2015-04-01 15:23+0100\n"
+"POT-Creation-Date: 2015-04-01 17:09+0100\n"
+"PO-Revision-Date: 2015-04-01 17:09+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -14,6 +14,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: admin.php:51 index.php:176
+msgid ""
+"JavaScript must be enabled in order for you to use CORAL. However, it seems "
+"JavaScript is either disabled or not supported by your browser. To use "
+"CORAL, enable JavaScript by changing your browser options, then"
+msgstr ""
+"JavaScript doir être activé pour utiliser CORAL. Cependant, on semble qui "
+"JavaScript est desactivé ou n'est pas supporté par votre navigateur. Pour "
+"utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
+"navigateur, après "
+
+#: admin.php:51 index.php:176
+msgid "try again"
+msgstr "réessayez"
+
+#: admin.php:65
+msgid "Users"
+msgstr "Utilisateur"
+
+#: admin.php:66
+msgid "Login ID must match the login ID set up in the modules"
+msgstr ""
+"Le nom d'utilisateur doit être égal que le nom d'utilisateur utilisé dans "
+"les modules"
+
+#: admin.php:72
+msgid "Processing..."
+msgstr "En traitement ..."
+
+#: admin.php:76
+msgid "Login page"
+msgstr "Page d'acces"
 
 #: admin/classes/common/DBService.php:39
 msgid "There was a problem with the database: "
@@ -42,6 +75,54 @@ msgid ""
 msgstr ""
 "Il y a un problème avec la configuration LDAP, contactez à votre "
 "administrateur."
+
+#: ajax_forms.php:43
+msgid "Edit User"
+msgstr "Modifier l'utilisateur"
+
+#: ajax_forms.php:43
+msgid "Add New User"
+msgstr "Ajouter un utilisateur"
+
+#: ajax_forms.php:56
+msgid "Login ID"
+msgstr "Nom d'utilisateur"
+
+#: ajax_forms.php:58
+msgid "Enter password for changes only"
+msgstr "Tapez le mot de passe pour changements seulement"
+
+#: ajax_forms.php:59
+msgid "New "
+msgstr "Nouveau"
+
+#: ajax_forms.php:59
+msgid "Password"
+msgstr "Mot de passe"
+
+#: ajax_forms.php:62
+msgid "Reenter Password"
+msgstr "Re-tapez le mot de passe"
+
+#: ajax_forms.php:65
+msgid "Admin?"
+msgstr "Admin?"
+
+#: ajax_forms.php:120 ajax_htmldata.php:75 ajax_processing.php:89
+msgid "Action "
+msgstr "Action "
+
+#: ajax_forms.php:120 ajax_htmldata.php:75 ajax_processing.php:89
+msgid " not set up!"
+msgstr " ne pas etabli!"
+
+#: ajax_htmldata.php:60 ajax_htmldata.php:64
+msgid "add new user"
+msgstr "Ajouter un utilisateur"
+
+#: ajax_processing.php:77
+msgid "User successfully deleted."
+msgstr "L'utilisateur a été effacé avec succès."
 
 #: index.php:54
 msgid "You are successfully logged out of the system."
@@ -95,21 +176,6 @@ msgstr "S'il vous plaît contactez l'administrateur."
 msgid "You must log in before accessing the admin page."
 msgstr "Vous devez se connecter avent d'acceder au page d'administrateur."
 
-#: index.php:176
-msgid ""
-"JavaScript must be enabled in order for you to use CORAL. However, it seems "
-"JavaScript is either disabled or not supported by your browser. To use "
-"CORAL, enable JavaScript by changing your browser options, then"
-msgstr ""
-"JavaScript doir être activé pour utiliser CORAL. Cependant, on semble qui "
-"JavaScript est desactivé ou n'est pas supporté par votre navigateur. Pour "
-"utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
-"navigateur, après "
-
-#: index.php:176
-msgid "try again"
-msgstr "réessayez"
-
 #: index.php:186
 msgid "Login ID:"
 msgstr "Nom d'utilisateur:"
@@ -125,3 +191,7 @@ msgstr "Rappelez mon nom d'utilisateur"
 #: index.php:201
 msgid "Admin page"
 msgstr "Page d'administrateur"
+
+#: install/index.php:17
+msgid "Host name is required"
+msgstr "Le nom du host est requis"

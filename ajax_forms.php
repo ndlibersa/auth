@@ -40,7 +40,7 @@ switch ($_GET['action']) {
 		<div id='div_updateForm'>
 
 
-		<div class='formTitle' style='width:295px;'><span class='headerText' style='margin-left:7px;'><?php if ($loginID){ echo "Edit User"; } else { echo "Add New User"; } ?></span></div>
+		<div class='formTitle' style='width:295px;'><span class='headerText' style='margin-left:7px;'><?php if ($loginID){ echo _("Edit User"); } else { echo _("Add New User"); } ?></span></div>
 
 
 		<span class='smallDarkRedText' id='span_errors'></span>
@@ -53,16 +53,16 @@ switch ($_GET['action']) {
 
 			<div style='width:260px; margin:10px;'>
 
-				<label for='submitLoginID' class='formLabel' <?php if ($loginID) { ?>style='margin-bottom:8px;'<?php } ?>><b>Login ID</b></label>
+				<label for='submitLoginID' class='formLabel' <?php if ($loginID) { ?>style='margin-bottom:8px;'<?php } ?>><b><?= _("Login ID")?></b></label>
 				<?php if (!$loginID) { ?><input type='text' id='textLoginID' value='' style='width:110px;'/> <?php } else { echo $loginID; } ?>
-				<?php if ($loginID) { ?><div class='smallDarkRedText' style="clear:left;margin-left:5px;margin-bottom:3px;">Enter password for changes only</div> <?php }else{ echo "<br />"; } ?>
-				<label for='password' class='formLabel'><b><?php if ($loginID) { echo "New "; } ?>Password</b></label>
+				<?php if ($loginID) { ?><div class='smallDarkRedText' style="clear:left;margin-left:5px;margin-bottom:3px;"><?= _("Enter password for changes only")?></div> <?php }else{ echo "<br />"; } ?>
+				<label for='password' class='formLabel'><b><?php if ($loginID) { echo _("New "); } echo _("Password");?></b></label>
 				<input type='password' id='password' value="" style='width:110px;' />
 				<br />
-				<label for='passwordReenter' class='formLabel'><b>Reenter Password</b></label>
+				<label for='passwordReenter' class='formLabel'><b><?= _("Reenter Password")?></b></label>
 				<input type='password' id='passwordReenter' value="" style='width:110px;'/>
 				<br />
-				<label for='adminInd' class='formLabel'><b>Admin?</b></label>
+				<label for='adminInd' class='formLabel'><b><?= _("Admin?")?></b></label>
 				<input type='checkbox' id='adminInd' value='Y' <?php echo $adminInd; ?> />
 				<br />
 			</div>
@@ -117,7 +117,7 @@ switch ($_GET['action']) {
 		break;
 
 	default:
-       echo "Action " . $action . " not set up!";
+       echo _("Action ") . $action . _(" not set up!");
        break;
 
 

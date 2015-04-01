@@ -57,11 +57,11 @@ switch ($_GET['action']) {
 
 				?>
 			</table>
-			<a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=&height=215&width=315&modal=true' class='thickbox' id='addUser'>add new user</a>
+			<a href='ajax_forms.php?action=getAdminUserUpdateForm&loginID=&height=215&width=315&modal=true' class='thickbox' id='addUser'><?= _("add new user")?></a>
 			<?php
 
 		}else{
-			echo "(none found)<br /><a href='ajax_forms.php?action=getUserUpdateForm&loginID=&height=275&width=315&modal=true' class='thickbox' id='addUser'>add new user</a>";
+			echo "(none found)<br /><a href='ajax_forms.php?action=getUserUpdateForm&loginID=&height=275&width=315&modal=true' class='thickbox' id='addUser'>"._("add new user")."</a>";
 		}
 
 		break;
@@ -72,7 +72,7 @@ switch ($_GET['action']) {
 
 
 	default:
-       echo "Action " . $action . " not set up!";
+       echo _("Action ") . $action . _(" not set up!");
        break;
 
 

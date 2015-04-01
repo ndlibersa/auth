@@ -71,7 +71,7 @@ switch ($http_lang) {
         $language = "en_US.utf8"; 
     break;			
     default: 
-        $language = "es_US.utf8"; 
+        $language = "en_US.utf8"; 
     break;
 }
     putenv("LC_ALL=$language");
