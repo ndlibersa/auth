@@ -1,0 +1,95 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: messages\n"
+"POT-Creation-Date: 2015-04-01 14:05+0100\n"
+"PO-Revision-Date: 2015-04-01 14:06+0100\n"
+"Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-Basepath: /var/www/Coral/auth\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: index.php:54
+msgid "You are successfully logged out of the system."
+msgstr "Vous êtes deconnecté avec succès du système."
+
+#: index.php:85
+msgid "Invalid login ID.  Please try again."
+msgstr "Nom d'utilisateur incorrecte. S'il vous plaît réessayez."
+
+#: index.php:90
+msgid "Invalid password.  Please try again."
+msgstr "Mot de passe incorrecte. S'il vous plaît réessayez."
+
+#: index.php:106
+msgid "You are already logged in as "
+msgstr "Vous êtes connecté comme "
+
+#: index.php:106
+msgid "You may log in as another user below,"
+msgstr "Vous pouvez se connecter avec autre utilisateur,"
+
+#: index.php:106
+msgid "return"
+msgstr "retourné"
+
+#: index.php:106
+msgid "or"
+msgstr "ou"
+
+#: index.php:106
+msgid "logout"
+msgstr "deconnecter"
+
+#: index.php:127
+msgid "Please enter login credentials to sign in."
+msgstr "S'il vous plaît tapez votre information d'acces pour se connecter."
+
+#: index.php:135
+msgid "Your session has timed out."
+msgstr "Votre session a expiré."
+
+#: index.php:144
+msgid "You do not have permission to enter."
+msgstr "Vous n'avez pas permis pour acceder."
+
+#: index.php:144
+msgid "Please contact an administrator."
+msgstr "S'il vous plaît contactez l'administrateur."
+
+#: index.php:154
+msgid "You must log in before accessing the admin page."
+msgstr "Vous devez se connecter avent d'acceder au page d'administrateur."
+
+#: index.php:176
+msgid ""
+"JavaScript must be enabled in order for you to use CORAL. However, it seems "
+"JavaScript is either disabled or not supported by your browser. To use "
+"CORAL, enable JavaScript by changing your browser options, then"
+msgstr ""
+"JavaScript doir être activé pour utiliser CORAL. Cependant, on semble qui "
+"JavaScript est desactivé ou n'est pas supporté par votre navigateur. Pour "
+"utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
+"navigateur, après"
+
+#: index.php:176
+msgid "try again"
+msgstr "réessayez"
+
+#: index.php:186
+msgid "Login ID:"
+msgstr "Nom d'utilisateur:"
+
+#: index.php:189
+msgid "Password:"
+msgstr "Mot de passe:"
+
+#: index.php:193
+msgid "Remember my login ID"
+msgstr "Rappelez mon nom d'utilisateur"
