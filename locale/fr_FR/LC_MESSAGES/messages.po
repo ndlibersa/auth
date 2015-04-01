@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-01 14:05+0100\n"
-"PO-Revision-Date: 2015-04-01 14:06+0100\n"
+"POT-Creation-Date: 2015-04-01 15:10+0100\n"
+"PO-Revision-Date: 2015-04-01 15:13+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -14,6 +14,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: admin/classes/common/DBService.php:39
+msgid "There was a problem with the database: "
+msgstr "Il y avait un problème avec la base de données: "
+
+#: admin/classes/common/LdapPerson.php:34
+msgid "Could not connect to "
+msgstr "Ne pouvait pas se connecter à "
+
+#: admin/classes/common/Object.php:63
+msgid "Cannot set value for undefined key ("
+msgstr "Ne peut pas asigner une clé indefini ("
+
+#: admin/classes/common/Object.php:72
+msgid "Cannot get value for undefined key ("
+msgstr ""
 
 #: index.php:54
 msgid "You are successfully logged out of the system."
@@ -76,7 +92,7 @@ msgstr ""
 "JavaScript doir être activé pour utiliser CORAL. Cependant, on semble qui "
 "JavaScript est desactivé ou n'est pas supporté par votre navigateur. Pour "
 "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
-"navigateur, après"
+"navigateur, après "
 
 #: index.php:176
 msgid "try again"
@@ -93,3 +109,7 @@ msgstr "Mot de passe:"
 #: index.php:193
 msgid "Remember my login ID"
 msgstr "Rappelez mon nom d'utilisateur"
+
+#: index.php:201
+msgid "Admin page"
+msgstr "Page d'administrateur"

@@ -59,5 +59,23 @@ if(function_exists("date_default_timezone_set") and function_exists("date_defaul
 	@date_default_timezone_set(@date_default_timezone_get());
 }
 
+// Verify the language of the browser
 
+$http_lang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
+
+switch ($http_lang) {
+    case 'fr': 
+        $language = "fr_FR.utf8"; 
+    break;	
+    case 'en': 
+        $language = "en_US.utf8"; 
+    break;			
+    default: 
+        $language = "es_US.utf8"; 
+    break;
+}
+    putenv("LC_ALL=$language");
+	setlocale(LC_ALL, $language);
+	bindtextdomain("messages", "./locale");
+	textdomain("messages");
 ?>
