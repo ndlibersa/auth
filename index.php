@@ -173,7 +173,7 @@ if(array_key_exists('admin', $_GET)){
 <script type="text/javascript" src="js/common.js"></script>
 </head>
 <body>
-<noscript><font face=arial><?= _("JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then")." <a href=''>"._("try again")."</a>."?></font></noscript>
+<noscript><font face="arial"><?= _("JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then")." <a href=''>"._("try again")."</a>."?></font></noscript>
 
 <center>
 <form name="loginForm" method="post" action="index.php?service=<?php echo htmlentities($service); ?>">

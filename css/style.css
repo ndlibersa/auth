@@ -19,11 +19,12 @@ body {
 	font-size:0.8em;
 }
 
-label{
- float: left;
- width: 100px;
- font-weight: bold;
- margin-left:67px;
+label {
+    float: left;
+    width: 150px;
+    font-weight: bold;
+    margin-left: 18px;
+    text-align: right;
 }
 
 .formLabel{
@@ -286,4 +287,6 @@ table.linedDataTable tr {
     background: linear-gradient(to bottom, #c8d8e9 3%,#e2f0ff 52%,#c7cefc 100%); /* W3C */
     border: none;
     border-radius: 5px;
+    font-size: 12pt;
+    font-weight: bolder;
 }
