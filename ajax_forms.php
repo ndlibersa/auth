@@ -72,10 +72,10 @@ switch ($_GET['action']) {
 		</table>
 
 		<br />
-		<table class='noBorderTable' style='width:125px;'>
+		<table class='noBorderTable' style='width:125px; margin:0 auto;'>
 			<tr>
-				<td style='text-align:left'><input type='button' value='submit' id ='submitUser' class='submitButton' /></td>
-				<td style='text-align:right'><input type='button' value='cancel' onclick="window.parent.tb_remove(); return false;" class='submitButton' /></td>
+				<td style='text-align:left;'><input type='button' value='<?= _("submit");?>' id ='submitUser' class='submitButton' /></td>
+				<td style='text-align:right;'><input type='button' value='<?= _("cancel");?>' onclick="window.parent.tb_remove(); return false;" class='submitButton' /></td>
 			</tr>
 		</table>
 

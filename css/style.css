@@ -1,7 +1,7 @@
 html { 
  height: 100%; 
  margin: 0;
- padding: 0
+ padding: 0;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
  font-family: "arial";
  font-size:0.99em;
  margin: 15px;
- padding: 0
+ padding: 0;
 }
 
 
@@ -90,7 +90,7 @@ a.helpfulLink {color:#526972;}
 .smallDarkRedText{font-size:85%;color:#7a0026;}
 .normalText{color:#3D545D}
 .smallBlueText{font-size:85%;font-weight:normal; color:#526972}
-.smallGreyText{font-size:85%;font-weight:normal; color:gray}
+.smallGreyText{font-size:85%;font-weight:normal; color:gray;}
 .boldBlueText{font-weight:bold; color:#526972;}
 .boldText{font-weight:bold;}
 .bigBlueText{font-size:125%; color:#526972;}

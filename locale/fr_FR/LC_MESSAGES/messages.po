@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-03 10:01+0100\n"
-"PO-Revision-Date: 2015-04-03 10:01+0100\n"
+"POT-Creation-Date: 2015-04-03 11:07+0100\n"
+"PO-Revision-Date: 2015-04-03 11:07+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -94,11 +94,11 @@ msgstr "Tapez le mot de passe pour changements seulement"
 
 #: ajax_forms.php:59
 msgid "New "
-msgstr "Nouveau"
+msgstr "Nouveau "
 
 #: ajax_forms.php:59
 msgid "Password"
-msgstr "Mot de passe"
+msgstr "mot de passe"
 
 #: ajax_forms.php:62
 msgid "Reenter Password"
@@ -108,6 +108,14 @@ msgstr "Re-tapez le mot de passe"
 msgid "Admin?"
 msgstr "Admin?"
 
+#: ajax_forms.php:77
+msgid "submit"
+msgstr "Valider"
+
+#: ajax_forms.php:78
+msgid "cancel"
+msgstr "Annuler"
+
 #: ajax_forms.php:120 ajax_htmldata.php:75 ajax_processing.php:89
 msgid "Action "
 msgstr "Action "
@@ -115,6 +123,14 @@ msgstr "Action "
 #: ajax_forms.php:120 ajax_htmldata.php:75 ajax_processing.php:89
 msgid " not set up!"
 msgstr " ne pas etabli!"
+
+#: ajax_htmldata.php:53
+msgid "edit password or admin status"
+msgstr "modifier le mot de passe ou le statut d`admin"
+
+#: ajax_htmldata.php:54
+msgid "remove"
+msgstr "effacer"
 
 #: ajax_htmldata.php:60 ajax_htmldata.php:64
 msgid "add new user"
