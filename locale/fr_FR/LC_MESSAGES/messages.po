@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-01 17:09+0100\n"
-"PO-Revision-Date: 2015-04-01 17:09+0100\n"
+"POT-Creation-Date: 2015-04-03 10:01+0100\n"
+"PO-Revision-Date: 2015-04-03 10:01+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -186,7 +186,11 @@ msgstr "Mot de passe:"
 
 #: index.php:193
 msgid "Remember my login ID"
-msgstr "Rappelez mon nom d'utilisateur"
+msgstr "Mémoriser mon nom d'utilisateur"
+
+#: index.php:197
+msgid "Login"
+msgstr "Connexion"
 
 #: index.php:201
 msgid "Admin page"
@@ -195,3 +199,6 @@ msgstr "Page d'administrateur"
 #: install/index.php:17
 msgid "Host name is required"
 msgstr "Le nom du host est requis"
+
+#~ msgid "Passwords do not match"
+#~ msgstr "sfdfsdfsdfsdf"

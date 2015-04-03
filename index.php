@@ -194,7 +194,7 @@ if(array_key_exists('admin', $_GET)){
 
 		<br />
 		<label for='loginbutton' style='margin-top:17px;'>&nbsp;</label>
-		<input type="image" src='images/login.gif' id="loginbutton" style='margin-top:17px;' />
+		<input type="submit" value="<?= _('Login')?>" id="loginbutton" class="loginButton" style='margin-top:17px;' />
 
 	</div>
 

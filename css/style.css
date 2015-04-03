@@ -278,8 +278,12 @@ table.linedDataTable tr {
 	vertical-align:top;
 }
 
-
-
-
-
-
+.loginButton{
+    width: 131px;
+    height: 30px;
+    color: #3D545D;
+    background: #e4f5fc; /* Old browsers */
+    background: linear-gradient(to bottom, #c8d8e9 3%,#e2f0ff 52%,#c7cefc 100%); /* W3C */
+    border: none;
+    border-radius: 5px;
+}
