@@ -197,30 +197,28 @@ if(array_key_exists('admin', $_GET)){
 		<input type="submit" value="<?= _('Login')?>" id="loginbutton" class="loginButton" style='margin-top:17px;' />
 
 	</div>
-    <div>
-        <p class="aliRight"><?= _("Change language:");?></p>
-        <select name="lang" id="lang" class="dropDownLang">
-           <?php
-            $fr="<option value='fr' selected='selected'>Français</option><option value='en'>English</option>";
-            $en="<option value='fr'>Français</option><option value='en' selected='selected'>English</option>";
-            if(isset($_COOKIE["lang"])){
-                if($_COOKIE["lang"]=='fr'){
-                    echo $fr;
-                }else{
-                    echo $en;
-                }
+    <p class="aliRight"><?= _("Change language:");?></p>
+    <select name="lang" id="lang" class="dropDownLang">
+       <?php
+        $fr="<option value='fr' selected='selected'>Français</option><option value='en'>English</option>";
+        $en="<option value='fr'>Français</option><option value='en' selected='selected'>English</option>";
+        if(isset($_COOKIE["lang"])){
+            if($_COOKIE["lang"]=='fr'){
+                echo $fr;
             }else{
-                $defLang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
-                if($defLang=='fr'){
-                    echo $fr;
-                }else{
-                    echo $en;
-                }
+                echo $en;
             }
-            ?>
-            
-        </select>
-    </div>
+        }else{
+            $defLang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
+            if($defLang=='fr'){
+                echo $fr;
+            }else{
+                echo $en;
+            }
+        }
+        ?>
+
+    </select>
 	<div class='smallerText' style='text-align:center; margin-top:13px;'><a href='admin.php'><?= _("Admin page")?></a></div>
 
 </form>
