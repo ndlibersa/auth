@@ -289,4 +289,25 @@ table.linedDataTable tr {
     border-radius: 5px;
     font-size: 12pt;
     font-weight: bolder;
+    cursor: pointer;
+}
+
+/* Change language */
+.dropDownLang{
+    float:right; 
+    position:absolute; 
+    margin-left:135px;
+    color: #3D545D;
+    background: #e4f5fc; /* Old browsers */
+    background: linear-gradient(to bottom, #c8d8e9 3%,#e2f0ff 52%,#c7cefc 100%); /* W3C */
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+    height:22px;
+    cursor: pointer;
+}
+.aliRight{
+    text-align: right;
+    margin-right:410px;
+    font-size: 11pt;
 }

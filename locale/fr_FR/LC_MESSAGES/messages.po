@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-03 11:07+0100\n"
-"PO-Revision-Date: 2015-04-03 11:07+0100\n"
+"POT-Creation-Date: 2015-04-08 15:57+0100\n"
+"PO-Revision-Date: 2015-04-08 15:58+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -21,7 +21,7 @@ msgid ""
 "JavaScript is either disabled or not supported by your browser. To use "
 "CORAL, enable JavaScript by changing your browser options, then"
 msgstr ""
-"JavaScript doir être activé pour utiliser CORAL. Cependant, on semble qui "
+"JavaScript doit être activé pour utiliser CORAL. Cependant, on semble qui "
 "JavaScript est desactivé ou n'est pas supporté par votre navigateur. Pour "
 "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
 "navigateur, après "
@@ -209,6 +209,10 @@ msgid "Login"
 msgstr "Connexion"
 
 #: index.php:201
+msgid "Change language:"
+msgstr "Changer la langue:"
+
+#: index.php:224
 msgid "Admin page"
 msgstr "Page d'administrateur"
 
