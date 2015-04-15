@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-08 15:57+0100\n"
-"PO-Revision-Date: 2015-04-08 15:58+0100\n"
+"POT-Creation-Date: 2015-04-15 13:53+0100\n"
+"PO-Revision-Date: 2015-04-15 13:53+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -208,11 +208,19 @@ msgstr "Mémoriser mon nom d'utilisateur"
 msgid "Login"
 msgstr "Connexion"
 
-#: index.php:201
+#: index.php:200
 msgid "Change language:"
 msgstr "Changer la langue:"
 
-#: index.php:224
+#: index.php:203 index.php:204
+msgid "French"
+msgstr "Français"
+
+#: index.php:203 index.php:204
+msgid "English"
+msgstr "Anglais"
+
+#: index.php:222
 msgid "Admin page"
 msgstr "Page d'administrateur"
 
