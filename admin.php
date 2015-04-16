@@ -72,7 +72,29 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 		<img src='images/circle.gif'>  <span style='font-size:90%'><?= _("Processing...")?></span>
 		</div>
 	</div>
-
+    <div class='boxRight'>
+		<p class="fontText"><?= _("Change language:");?></p>
+		<select name="lang" id="lang" class="dropDownLang">
+			<?php
+			$fr="<option value='fr' selected='selected'>"._("French")."</option><option value='en'>"._("English")."</option>";
+			$en="<option value='fr'>"._("French")."</option><option value='en' selected='selected'>"._("English")."</option>";
+			if(isset($_COOKIE["lang"])){
+				if($_COOKIE["lang"]=='fr'){
+					echo $fr;
+				}else{
+					echo $en;
+				}
+			}else{
+				$defLang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
+				if($defLang=='fr'){
+					echo $fr;
+				}else{
+					echo $en;
+				}
+			}
+			?>
+		</select>
+	</div>
 	<div class='smallerText' style='text-align:center; margin-top:13px;'><a href='index.php'><?= _("Login page")?></a></div>
 
 
@@ -86,7 +108,23 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 </center>
 <br />
 <br />
-
+<script>
+    /*
+     * Functions to change the language with the dropdown
+     */
+    $("#lang").change(function() {
+        setLanguage($("#lang").val());
+        location.reload();
+    });
+    // Create a cookie with the code of language
+    function setLanguage(lang) {
+        var wl = window.location, now = new Date(), time = now.getTime();
+        var cookievalid=86400000; // 1 jour (1000*60*60*24)
+        time += cookievalid;
+        now.setTime(time);
+        document.cookie ='lang='+lang+';path=/'+';domain='+wl.host+';expires='+now;
+    }
+</script>
 <script type="text/javascript" src="js/admin.js"></script>
 
 </body>
