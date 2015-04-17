@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-15 13:53+0100\n"
-"PO-Revision-Date: 2015-04-15 13:53+0100\n"
+"POT-Creation-Date: 2015-04-17 15:08+0100\n"
+"PO-Revision-Date: 2015-04-17 15:08+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -14,6 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: /var/www/Coral/auth/js/plugins/*\n"
 
 #: admin.php:51 index.php:176
 msgid ""
@@ -44,7 +45,19 @@ msgstr ""
 msgid "Processing..."
 msgstr "En traitement ..."
 
-#: admin.php:76
+#: admin.php:76 index.php:201
+msgid "Change language:"
+msgstr "Changer la langue:"
+
+#: admin.php:79 admin.php:80 index.php:204 index.php:205
+msgid "French"
+msgstr "Français"
+
+#: admin.php:79 admin.php:80 index.php:204 index.php:205
+msgid "English"
+msgstr "Anglais"
+
+#: admin.php:98
 msgid "Login page"
 msgstr "Page d'acces"
 
@@ -208,25 +221,12 @@ msgstr "Mémoriser mon nom d'utilisateur"
 msgid "Login"
 msgstr "Connexion"
 
-#: index.php:200
-msgid "Change language:"
-msgstr "Changer la langue:"
-
-#: index.php:203 index.php:204
-msgid "French"
-msgstr "Français"
-
-#: index.php:203 index.php:204
-msgid "English"
-msgstr "Anglais"
-
-#: index.php:222
+#: index.php:223
 msgid "Admin page"
 msgstr "Page d'administrateur"
 
-#: install/index.php:17
-msgid "Host name is required"
-msgstr "Le nom du host est requis"
+#~ msgid "Host name is required"
+#~ msgstr "Le nom du host est requis"
 
 #~ msgid "Passwords do not match"
-#~ msgstr "sfdfsdfsdfsdf"
+#~ msgstr "Les mots de passe ne correspondent pas"
