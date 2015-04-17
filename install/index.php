@@ -14,7 +14,7 @@ if ($step == "3"){
 	$database_password = trim($_POST['database_password']);
 	$database_name = trim($_POST['database_name']);
 
-	if (!$database_host) $errorMessage[] = _('Host name is required');
+	if (!$database_host) $errorMessage[] = 'Host name is required';
 	if (!$database_name) $errorMessage[] = 'Database name is required';
 	if (!$database_username) $errorMessage[] = 'User name is required';
 	if (!$database_password) $errorMessage[] = 'Password is required';

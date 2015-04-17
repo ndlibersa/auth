@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-17 13:21+0100\n"
-"PO-Revision-Date: 2015-04-17 13:37+0100\n"
+"POT-Creation-Date: 2015-04-17 15:08+0100\n"
+"PO-Revision-Date: 2015-04-17 15:08+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -45,19 +45,19 @@ msgstr ""
 msgid "Processing..."
 msgstr "En traitement ..."
 
-#: admin.php:89 index.php:201
+#: admin.php:76 index.php:201
 msgid "Change language:"
 msgstr "Changer la langue:"
 
-#: admin.php:92 admin.php:93 index.php:204 index.php:205
+#: admin.php:79 admin.php:80 index.php:204 index.php:205
 msgid "French"
 msgstr "Français"
 
-#: admin.php:92 admin.php:93 index.php:204 index.php:205
+#: admin.php:79 admin.php:80 index.php:204 index.php:205
 msgid "English"
 msgstr "Anglais"
 
-#: admin.php:111
+#: admin.php:98
 msgid "Login page"
 msgstr "Page d'acces"
 
@@ -225,9 +225,8 @@ msgstr "Connexion"
 msgid "Admin page"
 msgstr "Page d'administrateur"
 
-#: install/index.php:17
-msgid "Host name is required"
-msgstr "Le nom du host est requis"
+#~ msgid "Host name is required"
+#~ msgstr "Le nom du host est requis"
 
 #~ msgid "Passwords do not match"
 #~ msgstr "Les mots de passe ne correspondent pas"
