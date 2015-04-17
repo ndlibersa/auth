@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-15 13:53+0100\n"
-"PO-Revision-Date: 2015-04-15 13:53+0100\n"
+"POT-Creation-Date: 2015-04-17 13:21+0100\n"
+"PO-Revision-Date: 2015-04-17 13:37+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -14,8 +14,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: /var/www/Coral/auth/js/plugins/*\n"
 
-#: admin.php:51 index.php:176
+#: admin.php:64 index.php:176
 msgid ""
 "JavaScript must be enabled in order for you to use CORAL. However, it seems "
 "JavaScript is either disabled or not supported by your browser. To use "
@@ -26,25 +27,37 @@ msgstr ""
 "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
 "navigateur, après "
 
-#: admin.php:51 index.php:176
+#: admin.php:64 index.php:176
 msgid "try again"
 msgstr "réessayez"
 
-#: admin.php:65
+#: admin.php:78
 msgid "Users"
 msgstr "Utilisateur"
 
-#: admin.php:66
+#: admin.php:79
 msgid "Login ID must match the login ID set up in the modules"
 msgstr ""
 "Le nom d'utilisateur doit être égal que le nom d'utilisateur utilisé dans "
 "les modules"
 
-#: admin.php:72
+#: admin.php:85
 msgid "Processing..."
 msgstr "En traitement ..."
 
-#: admin.php:76
+#: admin.php:89 index.php:201
+msgid "Change language:"
+msgstr "Changer la langue:"
+
+#: admin.php:92 admin.php:93 index.php:204 index.php:205
+msgid "French"
+msgstr "Français"
+
+#: admin.php:92 admin.php:93 index.php:204 index.php:205
+msgid "English"
+msgstr "Anglais"
+
+#: admin.php:111
 msgid "Login page"
 msgstr "Page d'acces"
 
@@ -208,19 +221,7 @@ msgstr "Mémoriser mon nom d'utilisateur"
 msgid "Login"
 msgstr "Connexion"
 
-#: index.php:200
-msgid "Change language:"
-msgstr "Changer la langue:"
-
-#: index.php:203 index.php:204
-msgid "French"
-msgstr "Français"
-
-#: index.php:203 index.php:204
-msgid "English"
-msgstr "Anglais"
-
-#: index.php:222
+#: index.php:223
 msgid "Admin page"
 msgstr "Page d'administrateur"
 
@@ -229,4 +230,4 @@ msgid "Host name is required"
 msgstr "Le nom du host est requis"
 
 #~ msgid "Passwords do not match"
-#~ msgstr "sfdfsdfsdfsdf"
+#~ msgstr "Les mots de passe ne correspondent pas"

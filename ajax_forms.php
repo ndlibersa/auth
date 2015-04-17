@@ -53,16 +53,16 @@ switch ($_GET['action']) {
 
 			<div style='width:260px; margin:10px;'>
 
-				<label for='submitLoginID' class='formLabel' <?php if ($loginID) { ?>style='margin-bottom:8px;'<?php } ?>><b><?= _("Login ID")?></b></label>
+				<label for='submitLoginID' class='formLabel' <?php if ($loginID) { ?>style='margin-bottom:8px;'<?php } ?>><b><?= _("Login ID");?></b></label>&nbsp;
 				<?php if (!$loginID) { ?><input type='text' id='textLoginID' value='' style='width:110px;'/> <?php } else { echo $loginID; } ?>
 				<?php if ($loginID) { ?><div class='smallDarkRedText' style="clear:left;margin-left:5px;margin-bottom:3px;"><?= _("Enter password for changes only")?></div> <?php }else{ echo "<br />"; } ?>
-				<label for='password' class='formLabel'><b><?php if ($loginID) { echo _("New "); } echo _("Password");?></b></label>
+				<label for='password' class='formLabel'><b><?php if ($loginID) { echo _("New "); } echo _("Password");?></b></label>&nbsp;
 				<input type='password' id='password' value="" style='width:110px;' />
 				<br />
-				<label for='passwordReenter' class='formLabel'><b><?= _("Reenter Password")?></b></label>
+				<label for='passwordReenter' class='formLabel'><b><?= _("Reenter Password");?></b></label>&nbsp;
 				<input type='password' id='passwordReenter' value="" style='width:110px;'/>
 				<br />
-				<label for='adminInd' class='formLabel'><b><?= _("Admin?")?></b></label>
+				<label for='adminInd' class='formLabel'><b><?= _("Admin?");?></b></label>&nbsp;
 				<input type='checkbox' id='adminInd' value='Y' <?php echo $adminInd; ?> />
 				<br />
 			</div>
@@ -85,30 +85,48 @@ switch ($_GET['action']) {
 		<script type="text/javascript" src="js/admin.js"></script>
 		<script type="text/javascript">
 		   //attach enter key event to new input and call add data when hit
-		   $('#loginID').keyup(function(e) {
+		   $('#textLoginID').keyup(function(e) {
 				   if(e.keyCode == 13) {
-					   window.parent.submitUserForm();
+					   //window.parent.submitUserForm();
+                       validateForm();
 				   }
         	});
 
 		   $('#password').keyup(function(e) {
 				   if(e.keyCode == 13) {
-					   window.parent.submitUserForm();
+					   //window.parent.submitUserForm();
+                       validateForm();
 				   }
         	});
 
 		   $('#passwordReenter').keyup(function(e) {
 				   if(e.keyCode == 13) {
-					   window.parent.submitUserForm();
+					   //window.parent.submitUserForm();
+                       validateForm();
 				   }
         	});
 
 
 			//bind all of the inputs
 			$("#submitUser").click(function () {
-				window.parent.submitUserForm();
+				//window.parent.submitUserForm();
+                validateForm();
 			});
-
+            
+            function validateForm (){
+                if ($("#textLoginID").val() == ''){
+                    $("#span_errors").html('UserID is required');
+                    $("#textLoginID").focus();
+                }else if($("#password").val() == ''){
+                    $("#span_errors").html('Password is required');
+                    $("#password").focus();
+                }else if (($("#password").val() != '') && ($("#password").val() != $("#passwordReenter").val())){
+                    $("#span_errors").html('Passwords do not match');
+                    $("#passwordReenter").focus();
+                }else{
+                    window.parent.submitUserForm();
+                }
+           }
 
         </script>
 

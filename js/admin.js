@@ -43,7 +43,7 @@ function updateUsers() {
 
   
 function submitUserForm(){
-  if (validateForm() === true) {
+  //if (validateForm() === true) {
 	// ajax call to add/update
 	$.post("ajax_processing.php?action=submitUser", { loginID: $("#textLoginID").val(), editLoginID: $("#editLoginID").val(), password: $("#password").val(), adminInd: getCheckboxValue('adminInd')  } ,
 		function(data){
@@ -56,38 +56,10 @@ function submitUserForm(){
 	);
 
 
-	return false;
+	//return false;
   
-  }
+  //}
 }  
-  
-  
-  
-  //validates fields
-  function validateForm (){
-  	myReturn=0;
-  	
-  	if (($("#password").val() != '') && ($("#password").val() != $("#passwordReenter").val())){
-  		$("#span_errors").html('Passwords do not match');
-  		myReturn="1";
-  	}
-
-  	if (($("#editLoginID").val() == '') && (($("#password").val() == ''))){
-  		$("#span_errors").html('Password is required');
-  		myReturn="1";
-  	}
-  	
-  
-  	if (myReturn == "1"){
-  		return false;
-  	}else{
-  		return true;
-  	}
-   }
-  
-
-
-
 
   function bind_removes(){
 
