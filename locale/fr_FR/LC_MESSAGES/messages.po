@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-17 15:08+0100\n"
-"PO-Revision-Date: 2015-04-17 15:08+0100\n"
+"POT-Creation-Date: 2015-04-17 15:21+0100\n"
+"PO-Revision-Date: 2015-04-17 15:21+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: /var/www/Coral/auth/js/plugins/*\n"
 
-#: admin.php:64 index.php:176
+#: admin.php:51 index.php:176
 msgid ""
 "JavaScript must be enabled in order for you to use CORAL. However, it seems "
 "JavaScript is either disabled or not supported by your browser. To use "
@@ -27,21 +27,21 @@ msgstr ""
 "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
 "navigateur, après "
 
-#: admin.php:64 index.php:176
+#: admin.php:51 index.php:176
 msgid "try again"
 msgstr "réessayez"
 
-#: admin.php:78
+#: admin.php:65
 msgid "Users"
 msgstr "Utilisateur"
 
-#: admin.php:79
+#: admin.php:66
 msgid "Login ID must match the login ID set up in the modules"
 msgstr ""
 "Le nom d'utilisateur doit être égal que le nom d'utilisateur utilisé dans "
 "les modules"
 
-#: admin.php:85
+#: admin.php:72
 msgid "Processing..."
 msgstr "En traitement ..."
 
@@ -129,11 +129,11 @@ msgstr "Valider"
 msgid "cancel"
 msgstr "Annuler"
 
-#: ajax_forms.php:120 ajax_htmldata.php:75 ajax_processing.php:89
+#: ajax_forms.php:138 ajax_htmldata.php:75 ajax_processing.php:89
 msgid "Action "
 msgstr "Action "
 
-#: ajax_forms.php:120 ajax_htmldata.php:75 ajax_processing.php:89
+#: ajax_forms.php:138 ajax_htmldata.php:75 ajax_processing.php:89
 msgid " not set up!"
 msgstr " ne pas etabli!"
 

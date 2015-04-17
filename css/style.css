@@ -42,7 +42,7 @@ input, select, multiple, textarea{
 
 
 
-.submitButton {color: #3D545D; font-family: "arial"; font-size: 95%; font-weight: medium;}
+.submitButton {color: #3D545D; font-family: "arial"; font-size: 95%;}
 
 textarea{
  width: 250px;
@@ -83,7 +83,7 @@ a.helpfulLink {color:#526972;}
 
 .smallText{color:#3D545D;font-size:92%;}
 .smallerText{color:#3D545D;font-size:85%;}
-.redText{color:red}
+.redText{color:red;}
 .smallRedText{font-size:85%;color:red;}
 .darkRedText{color:#7a0026;}
 .bigDarkRedText{font-size:125%; color:#7a0026;}
@@ -96,8 +96,8 @@ a.helpfulLink {color:#526972;}
 .bigBlueText{font-size:125%; color:#526972;}
 .headerText {font-size:125%;font-weight:bold; }
 
-select option { color: #3D545D; font-family: "arial"; font-size: 8pt; font-weight: medium; }
-.optionStyle { color: #3D545D; font-family: "arial"; font-size: 8pt; font-weight: medium; }
+select option { color: #3D545D; font-family: "arial"; font-size: 8pt;}
+.optionStyle { color: #3D545D; font-family: "arial"; font-size: 8pt;}
 
 
 
