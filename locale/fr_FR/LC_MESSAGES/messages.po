@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-17 15:21+0100\n"
-"PO-Revision-Date: 2015-04-17 15:21+0100\n"
+"POT-Creation-Date: 2015-04-17 16:15+0100\n"
+"PO-Revision-Date: 2015-04-17 16:15+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -111,7 +111,7 @@ msgstr "Nouveau "
 
 #: ajax_forms.php:59
 msgid "Password"
-msgstr "mot de passe"
+msgstr "Mot de passe"
 
 #: ajax_forms.php:62
 msgid "Reenter Password"
@@ -129,11 +129,23 @@ msgstr "Valider"
 msgid "cancel"
 msgstr "Annuler"
 
-#: ajax_forms.php:138 ajax_htmldata.php:75 ajax_processing.php:89
+#: ajax_forms.php:117
+msgid "UserID is required"
+msgstr "Le nom d'utilisateur est nécessaire"
+
+#: ajax_forms.php:120
+msgid "Password is required"
+msgstr "Le mot de passe est nécessaire"
+
+#: ajax_forms.php:123
+msgid "Passwords do not match"
+msgstr "Les mots de passe ne correspondent pas"
+
+#: ajax_forms.php:137 ajax_htmldata.php:75 ajax_processing.php:89
 msgid "Action "
 msgstr "Action "
 
-#: ajax_forms.php:138 ajax_htmldata.php:75 ajax_processing.php:89
+#: ajax_forms.php:137 ajax_htmldata.php:75 ajax_processing.php:89
 msgid " not set up!"
 msgstr " ne pas etabli!"
 
@@ -224,9 +236,3 @@ msgstr "Connexion"
 #: index.php:223
 msgid "Admin page"
 msgstr "Page d'administrateur"
-
-#~ msgid "Host name is required"
-#~ msgstr "Le nom du host est requis"
-
-#~ msgid "Passwords do not match"
-#~ msgstr "Les mots de passe ne correspondent pas"
