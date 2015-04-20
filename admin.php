@@ -46,6 +46,19 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 <script type="text/javascript" src="js/plugins/jquery.js"></script>
 <script type="text/javascript" src="js/plugins/thickbox.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/plugins/Gettext.js"></script>
+<?php
+   if(isset($_COOKIE["lang"])){
+        if($_COOKIE["lang"]=='fr'){
+            echo "<link rel='gettext' type='application/x-po' href='./locale/fr_FR/LC_MESSAGES/messages.po'>";
+        }
+    }else{
+        $defLang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
+        if($defLang=='fr'){
+            echo "<link rel='gettext' type='application/x-po' href='./locale/fr_FR/LC_MESSAGES/messages.po'>";
+        }
+    } 
+?>
 </head>
 <body>
 <noscript><font face=arial><?= _("JavaScript must be enabled in order for you to use CORAL. However, it seems JavaScript is either disabled or not supported by your browser. To use CORAL, enable JavaScript by changing your browser options, then")." <a href=''>"._("try again")."</a>."?></font></noscript>

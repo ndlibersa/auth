@@ -15,6 +15,47 @@
 **************************************************************************************************************************
 */
 
+function getCookie(clave){
+    var valCookie= ""; 
+    var buscar= clave + "="; 
+    if(document.cookie.length > 0) { 
+        pos=document.cookie.indexOf(buscar); 
+        if (pos != -1) {
+            pos += buscar.length; 
+            fin= document.cookie.indexOf(";", pos); 
+            if (fin == -1) 
+                fin= document.cookie.length; 
+            valCookie= unescape(document.cookie.substring(pos,fin)) 
+        }
+    } 
+    return valCookie; 
+} 
+
+function fLang() {
+    var langBrowser = '';
+    // Search the language according to the browser
+    if(getCookie('lang')=='' || getCookie('lang')==undefined){
+        if (navigator.languages==undefined) {
+            if (navigator.language==undefined) {
+                // Internet Explorer Compatibility
+                langBrowser= navigator.userLanguage.slice(0,2);
+            } else {
+                // Old navigator compatibility
+                langBrowser= navigator.language.slice(0,2);
+            }
+        } else { 
+            // Recent navigators
+            langBrowser= navigator.languages[0].slice(0,2);                                
+        }
+    }else{
+        langBrowser = getCookie('lang');
+    }
+    return langBrowser;
+}
+var gt = new Gettext({ 'domain' : 'messages' });//gt = new Gettext({ 'domain' : 'messages' });
+function _(msgid) {
+    return gt.gettext(msgid);
+}
 
 $(document).ready(function(){
 
@@ -43,23 +84,40 @@ function updateUsers() {
 
   
 function submitUserForm(){
-  //if (validateForm() === true) {
+  if (validateForm() === true) {
 	// ajax call to add/update
 	$.post("ajax_processing.php?action=submitUser", { loginID: $("#textLoginID").val(), editLoginID: $("#editLoginID").val(), password: $("#password").val(), adminInd: getCheckboxValue('adminInd')  } ,
 		function(data){
-
 			tb_remove();		
 			updateUsers();
 			return false;
-			
 		}
 	);
-
-
-	//return false;
+	return false;
   
-  //}
+  }
 }  
+
+function validateForm (){
+    var control=true;
+    if (($("#password").val() != '') && ($("#password").val() != $("#passwordReenter").val())){
+        $("#span_errors").html(_("Passwords do not match"));
+        $("#passwordReenter").focus();
+        control = false;
+    }
+
+    if (($("#editLoginID").val() == '') && (($("#password").val() == ''))){
+        $("#span_errors").html(_("Password is required"));
+        $("#password").focus();
+        control = false;
+    }
+    if (($("#textLoginID").val() == '')){
+        $("#span_errors").html(_("UserID is required"));
+        $("#textLoginID").focus();
+        control = false;
+    }
+    return control;
+}
 
   function bind_removes(){
 
