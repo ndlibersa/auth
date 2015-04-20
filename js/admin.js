@@ -52,7 +52,7 @@ function fLang() {
     }
     return langBrowser;
 }
-var gt = new Gettext({ 'domain' : 'messages' });//gt = new Gettext({ 'domain' : 'messages' });
+var gt = new Gettext({ 'domain' : 'messages' });
 function _(msgid) {
     return gt.gettext(msgid);
 }
@@ -123,7 +123,7 @@ function validateForm (){
 
 
   	 $(".deleteUser").unbind('click').click(function () {
-	  if (confirm("Do you really want to delete this user?") == true) {
+	  if (confirm(_("Do you really want to delete this user?")) == true) {
 		  $.ajax({
 			 type:       "GET",
 			 url:        "ajax_processing.php",

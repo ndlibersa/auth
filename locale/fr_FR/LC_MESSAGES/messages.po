@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-17 16:15+0100\n"
-"PO-Revision-Date: 2015-04-17 16:15+0100\n"
+"POT-Creation-Date: 2015-04-20 11:35+0100\n"
+"PO-Revision-Date: 2015-04-20 11:37+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -14,9 +14,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: /var/www/Coral/auth/js/plugins/*\n"
+"X-Poedit-SearchPathExcluded-0: /var/www/Coral/auth/js/plugins\n"
 
-#: admin.php:51 index.php:176
+#: admin.php:64 index.php:176
 msgid ""
 "JavaScript must be enabled in order for you to use CORAL. However, it seems "
 "JavaScript is either disabled or not supported by your browser. To use "
@@ -27,37 +27,37 @@ msgstr ""
 "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
 "navigateur, après "
 
-#: admin.php:51 index.php:176
+#: admin.php:64 index.php:176
 msgid "try again"
 msgstr "réessayez"
 
-#: admin.php:65
+#: admin.php:78
 msgid "Users"
 msgstr "Utilisateur"
 
-#: admin.php:66
+#: admin.php:79
 msgid "Login ID must match the login ID set up in the modules"
 msgstr ""
 "Le nom d'utilisateur doit être égal que le nom d'utilisateur utilisé dans "
 "les modules"
 
-#: admin.php:72
+#: admin.php:85
 msgid "Processing..."
 msgstr "En traitement ..."
 
-#: admin.php:76 index.php:201
+#: admin.php:89 index.php:201
 msgid "Change language:"
 msgstr "Changer la langue:"
 
-#: admin.php:79 admin.php:80 index.php:204 index.php:205
+#: admin.php:92 admin.php:93 index.php:204 index.php:205
 msgid "French"
 msgstr "Français"
 
-#: admin.php:79 admin.php:80 index.php:204 index.php:205
+#: admin.php:92 admin.php:93 index.php:204 index.php:205
 msgid "English"
 msgstr "Anglais"
 
-#: admin.php:98
+#: admin.php:111
 msgid "Login page"
 msgstr "Page d'acces"
 
@@ -129,23 +129,11 @@ msgstr "Valider"
 msgid "cancel"
 msgstr "Annuler"
 
-#: ajax_forms.php:117
-msgid "UserID is required"
-msgstr "Le nom d'utilisateur est nécessaire"
-
-#: ajax_forms.php:120
-msgid "Password is required"
-msgstr "Le mot de passe est nécessaire"
-
-#: ajax_forms.php:123
-msgid "Passwords do not match"
-msgstr "Les mots de passe ne correspondent pas"
-
-#: ajax_forms.php:137 ajax_htmldata.php:75 ajax_processing.php:89
+#: ajax_forms.php:114 ajax_htmldata.php:75 ajax_processing.php:89
 msgid "Action "
 msgstr "Action "
 
-#: ajax_forms.php:137 ajax_htmldata.php:75 ajax_processing.php:89
+#: ajax_forms.php:114 ajax_htmldata.php:75 ajax_processing.php:89
 msgid " not set up!"
 msgstr " ne pas etabli!"
 
@@ -236,3 +224,23 @@ msgstr "Connexion"
 #: index.php:223
 msgid "Admin page"
 msgstr "Page d'administrateur"
+
+#: js/admin.js:104
+msgid "Passwords do not match"
+msgstr "Les mots de passe ne correspondent pas"
+
+#: js/admin.js:110
+msgid "Password is required"
+msgstr "Le mot de passe est nécessaire"
+
+#: js/admin.js:115
+msgid "UserID is required"
+msgstr "Le nom d'utilisateur est nécessaire"
+
+#: js/admin.js:126
+msgid "Do you really want to delete this user?"
+msgstr "Voulez-vous vraiment supprimer cet utilisateur?"
+
+#: js/index.js:76
+msgid "Refreshing Contents..."
+msgstr "Rechargements des contenus..."
