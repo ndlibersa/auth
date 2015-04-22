@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-20 11:35+0100\n"
-"PO-Revision-Date: 2015-04-20 11:37+0100\n"
+"POT-Creation-Date: 2015-04-22 09:59+0100\n"
+"PO-Revision-Date: 2015-04-22 10:00+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: /var/www/Coral/auth/js/plugins\n"
 
-#: admin.php:64 index.php:176
+#: admin.php:64 index.php:189
 msgid ""
 "JavaScript must be enabled in order for you to use CORAL. However, it seems "
 "JavaScript is either disabled or not supported by your browser. To use "
@@ -27,7 +27,7 @@ msgstr ""
 "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
 "navigateur, après "
 
-#: admin.php:64 index.php:176
+#: admin.php:64 index.php:189
 msgid "try again"
 msgstr "réessayez"
 
@@ -45,15 +45,15 @@ msgstr ""
 msgid "Processing..."
 msgstr "En traitement ..."
 
-#: admin.php:89 index.php:201
+#: admin.php:89 index.php:214
 msgid "Change language:"
 msgstr "Changer la langue:"
 
-#: admin.php:92 admin.php:93 index.php:204 index.php:205
+#: admin.php:92 admin.php:93 index.php:217 index.php:218
 msgid "French"
 msgstr "Français"
 
-#: admin.php:92 admin.php:93 index.php:204 index.php:205
+#: admin.php:92 admin.php:93 index.php:217 index.php:218
 msgid "English"
 msgstr "Anglais"
 
@@ -203,25 +203,25 @@ msgstr "S'il vous plaît contactez l'administrateur."
 
 #: index.php:154
 msgid "You must log in before accessing the admin page."
-msgstr "Vous devez se connecter avent d'acceder au page d'administrateur."
+msgstr "Vous devez se connecter avant d'acceder au page d'administrateur."
 
-#: index.php:186
+#: index.php:199
 msgid "Login ID:"
 msgstr "Nom d'utilisateur:"
 
-#: index.php:189
+#: index.php:202
 msgid "Password:"
 msgstr "Mot de passe:"
 
-#: index.php:193
+#: index.php:206
 msgid "Remember my login ID"
 msgstr "Mémoriser mon nom d'utilisateur"
 
-#: index.php:197
+#: index.php:210
 msgid "Login"
 msgstr "Connexion"
 
-#: index.php:223
+#: index.php:236
 msgid "Admin page"
 msgstr "Page d'administrateur"
 
