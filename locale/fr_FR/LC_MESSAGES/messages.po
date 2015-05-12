@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-04-22 09:59+0100\n"
-"PO-Revision-Date: 2015-04-22 10:00+0100\n"
+"POT-Creation-Date: 2015-05-12 17:09+0100\n"
+"PO-Revision-Date: 2015-05-12 17:09+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -15,6 +15,26 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: /var/www/Coral/auth/js/plugins\n"
+
+#: LangCodes.php:9
+msgid "French, FR"
+msgstr "Français, FR"
+
+#: LangCodes.php:10
+msgid "English, US"
+msgstr "Anglais, US"
+
+#: LangCodes.php:11
+msgid "Spanish, ES"
+msgstr "Espagnol, ES"
+
+#: LangCodes.php:12
+msgid "Spanish, MX"
+msgstr "Espagnol, MX"
+
+#: LangCodes.php:13
+msgid "Italian, IT"
+msgstr "Italien, IT"
 
 #: admin.php:64 index.php:189
 msgid ""
@@ -49,11 +69,11 @@ msgstr "En traitement ..."
 msgid "Change language:"
 msgstr "Changer la langue:"
 
-#: admin.php:92 admin.php:93 index.php:217 index.php:218
+#: admin.php:92 admin.php:93
 msgid "French"
 msgstr "Français"
 
-#: admin.php:92 admin.php:93 index.php:217 index.php:218
+#: admin.php:92 admin.php:93
 msgid "English"
 msgstr "Anglais"
 
@@ -153,55 +173,55 @@ msgstr "Ajouter un utilisateur"
 msgid "User successfully deleted."
 msgstr "L'utilisateur a été effacé avec succès."
 
-#: index.php:54
+#: index.php:57
 msgid "You are successfully logged out of the system."
 msgstr "Vous êtes deconnecté avec succès du système."
 
-#: index.php:85
+#: index.php:88
 msgid "Invalid login ID.  Please try again."
 msgstr "Nom d'utilisateur incorrecte. S'il vous plaît réessayez."
 
-#: index.php:90
+#: index.php:93
 msgid "Invalid password.  Please try again."
 msgstr "Mot de passe incorrecte. S'il vous plaît réessayez."
 
-#: index.php:106
+#: index.php:109
 msgid "You are already logged in as "
 msgstr "Vous êtes connecté comme "
 
-#: index.php:106
+#: index.php:109
 msgid "You may log in as another user below,"
 msgstr "Vous pouvez se connecter avec autre utilisateur,"
 
-#: index.php:106
+#: index.php:109
 msgid "return"
 msgstr "retourné"
 
-#: index.php:106
+#: index.php:109
 msgid "or"
 msgstr "ou"
 
-#: index.php:106
+#: index.php:109
 msgid "logout"
 msgstr "deconnecter"
 
-#: index.php:127
+#: index.php:130
 msgid "Please enter login credentials to sign in."
 msgstr "S'il vous plaît tapez votre information d'acces pour se connecter."
 
-#: index.php:135
+#: index.php:138
 msgid "Your session has timed out."
 msgstr "Votre session a expiré."
 
-#: index.php:144
+#: index.php:147
 msgid "You do not have permission to enter."
 msgstr "Vous n'avez pas permis pour acceder."
 
-#: index.php:144
+#: index.php:147
 msgid "Please contact an administrator."
 msgstr "S'il vous plaît contactez l'administrateur."
 
-#: index.php:154
+#: index.php:157
 msgid "You must log in before accessing the admin page."
 msgstr "Vous devez se connecter avant d'acceder au page d'administrateur."
 
@@ -221,7 +241,7 @@ msgstr "Mémoriser mon nom d'utilisateur"
 msgid "Login"
 msgstr "Connexion"
 
-#: index.php:236
+#: index.php:255
 msgid "Admin page"
 msgstr "Page d'administrateur"
 

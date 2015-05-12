@@ -21,8 +21,11 @@
 session_start();
 
 include_once 'directory.php';
-
 $util = new Utility();
+
+// Include file of language codes
+include_once 'LangCodes.php';
+$langue = new LangCodes();
 
 if (isset($_GET['service'])){
 	$service = $_GET['service'];
@@ -173,16 +176,13 @@ if(array_key_exists('admin', $_GET)){
 <script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/plugins/Gettext.js"></script>
 <?php
-   if(isset($_COOKIE["lang"])){
-        if($_COOKIE["lang"]=='fr'){
-            echo "<link rel='gettext' type='application/x-po' href='./locale/fr_FR/LC_MESSAGES/messages.po'>";
+    // Add translation for the JavaScript files
+    global $http_lang;
+    if(isset($_COOKIE["lang"])){
+        if($_COOKIE["lang"]==$http_lang && $_COOKIE["lang"] != "en_US"){
+            echo "<link rel='gettext' type='application/x-po' href='./locale/".$http_lang."/LC_MESSAGES/messages.po' />";
         }
-    }else{
-        $defLang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
-        if($defLang=='fr'){
-            echo "<link rel='gettext' type='application/x-po' href='./locale/fr_FR/LC_MESSAGES/messages.po'>";
-        }
-    } 
+    }
 ?>
 </head>
 <body>
@@ -214,22 +214,41 @@ if(array_key_exists('admin', $_GET)){
 		<p class="fontText"><?= _("Change language:");?></p>
 		<select name="lang" id="lang" class="dropDownLang">
 			<?php
-			$fr="<option value='fr' selected='selected'>"._("French")."</option><option value='en'>"._("English")."</option>";
-			$en="<option value='fr'>"._("French")."</option><option value='en' selected='selected'>"._("English")."</option>";
-			if(isset($_COOKIE["lang"])){
-				if($_COOKIE["lang"]=='fr'){
-					echo $fr;
-				}else{
-					echo $en;
-				}
-			}else{
-				$defLang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
-				if($defLang=='fr'){
-					echo $fr;
-				}else{
-					echo $en;
-				}
-			}
+            // Get all translations on the 'locale' folder
+            $route='locale';
+            $lang[]="en_US"; // add default language
+            if (is_dir($route)) { 
+                if ($dh = opendir($route)) { 
+                    while (($file = readdir($dh)) !== false) {
+                        if (is_dir("$route/$file") && $file!="." && $file!=".."){
+                            $lang[]=$file;
+                        } 
+                    } 
+                    closedir($dh); 
+                } 
+            }else {
+                echo "<br>Invalid route!"; 
+            }
+            // Get language of navigator
+            $defLang = str_replace('-','_',substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,5));
+            
+            // Show an ordered list
+            sort($lang); 
+            for($i=0; $i<count($lang); $i++){
+                if(isset($_COOKIE["lang"])){
+                    if($_COOKIE["lang"]==$lang[$i]){
+                        echo "<option value='".$lang[$i]."' selected='selected'>".$langue->getLanguage($lang[$i])."</option>";
+                    }else{
+                        echo "<option value='".$lang[$i]."'>".$langue->getLanguage($lang[$i])."</option>";
+                    }
+                }else{
+                    if($defLang==$lang[$i]){
+                        echo "<option value='".$lang[$i]."' selected='selected'>".$langue->getLanguage($lang[$i])."</option>";
+                    }else{
+                        echo "<option value='".$lang[$i]."'>".$langue->getLanguage($lang[$i])."</option>";
+                    }
+                }
+            }
 			?>
 		</select>
 	</div>
