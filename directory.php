@@ -64,7 +64,7 @@ if(function_exists("date_default_timezone_set") and function_exists("date_defaul
     if(isset($_COOKIE["lang"])){
         $http_lang = $_COOKIE["lang"];
     }else{
-        $http_lang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,5);
+        $http_lang = str_replace('-','_',substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,5));
     }
     putenv("LC_ALL=$http_lang");
 	setlocale(LC_ALL, $http_lang.".utf8");
