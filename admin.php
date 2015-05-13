@@ -24,7 +24,7 @@ include_once 'directory.php';
 
 // Include file of language codes
 include_once 'LangCodes.php';
-$langue = new LangCodes();
+$lang_name = new LangCodes();
 
 if (isset($_SESSION['loginID'])){
 	$loginID=$_SESSION['loginID'];
@@ -113,15 +113,15 @@ if (($user->isAdmin) && ($user->getOpenSession())){
             for($i=0; $i<count($lang); $i++){
                 if(isset($_COOKIE["lang"])){
                     if($_COOKIE["lang"]==$lang[$i]){
-                        echo "<option value='".$lang[$i]."' selected='selected'>".$langue->getLanguage($lang[$i])."</option>";
+                        echo "<option value='".$lang[$i]."' selected='selected'>".$lang_name->getLanguage($lang[$i])."</option>";
                     }else{
-                        echo "<option value='".$lang[$i]."'>".$langue->getLanguage($lang[$i])."</option>";
+                        echo "<option value='".$lang[$i]."'>".$lang_name->getLanguage($lang[$i])."</option>";
                     }
                 }else{
                     if($defLang==$lang[$i]){
-                        echo "<option value='".$lang[$i]."' selected='selected'>".$langue->getLanguage($lang[$i])."</option>";
+                        echo "<option value='".$lang[$i]."' selected='selected'>".$lang_name->getLanguage($lang[$i])."</option>";
                     }else{
-                        echo "<option value='".$lang[$i]."'>".$langue->getLanguage($lang[$i])."</option>";
+                        echo "<option value='".$lang[$i]."'>".$lang_name->getLanguage($lang[$i])."</option>";
                     }
                 }
             }

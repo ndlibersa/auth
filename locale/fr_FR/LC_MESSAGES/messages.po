@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-05-12 17:09+0100\n"
-"PO-Revision-Date: 2015-05-12 17:09+0100\n"
+"POT-Creation-Date: 2015-05-13 09:56+0100\n"
+"PO-Revision-Date: 2015-05-13 09:56+0100\n"
 "Last-Translator: Cesar <hernandez.antonio.cesar19@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -36,7 +36,7 @@ msgstr "Espagnol, MX"
 msgid "Italian, IT"
 msgstr "Italien, IT"
 
-#: admin.php:64 index.php:189
+#: admin.php:65 index.php:189
 msgid ""
 "JavaScript must be enabled in order for you to use CORAL. However, it seems "
 "JavaScript is either disabled or not supported by your browser. To use "
@@ -47,37 +47,29 @@ msgstr ""
 "utiliser CORAL, activez JavaScript en modifiant la configuration de votre "
 "navigateur, après "
 
-#: admin.php:64 index.php:189
+#: admin.php:65 index.php:189
 msgid "try again"
 msgstr "réessayez"
 
-#: admin.php:78
+#: admin.php:79
 msgid "Users"
 msgstr "Utilisateur"
 
-#: admin.php:79
+#: admin.php:80
 msgid "Login ID must match the login ID set up in the modules"
 msgstr ""
 "Le nom d'utilisateur doit être égal que le nom d'utilisateur utilisé dans "
 "les modules"
 
-#: admin.php:85
+#: admin.php:86
 msgid "Processing..."
 msgstr "En traitement ..."
 
-#: admin.php:89 index.php:214
+#: admin.php:90 index.php:214
 msgid "Change language:"
 msgstr "Changer la langue:"
 
-#: admin.php:92 admin.php:93
-msgid "French"
-msgstr "Français"
-
-#: admin.php:92 admin.php:93
-msgid "English"
-msgstr "Anglais"
-
-#: admin.php:111
+#: admin.php:131
 msgid "Login page"
 msgstr "Page d'acces"
 
@@ -241,6 +233,10 @@ msgstr "Mémoriser mon nom d'utilisateur"
 msgid "Login"
 msgstr "Connexion"
 
+#: index.php:230
+msgid "Invalid translation route!"
+msgstr "Le chemin aux traductions n'est pas valide!"
+
 #: index.php:255
 msgid "Admin page"
 msgstr "Page d'administrateur"
@@ -264,3 +260,9 @@ msgstr "Voulez-vous vraiment supprimer cet utilisateur?"
 #: js/index.js:76
 msgid "Refreshing Contents..."
 msgstr "Rechargements des contenus..."
+
+#~ msgid "French"
+#~ msgstr "Français"
+
+#~ msgid "English"
+#~ msgstr "Anglais"
