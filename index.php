@@ -278,7 +278,7 @@ if(array_key_exists('admin', $_GET)){
         // Create a cookie with the code of language
         function setLanguage(lang) {
 			var wl = window.location, now = new Date(), time = now.getTime();
-            var cookievalid=86400000; // 1 day (1000*60*60*24)
+            var cookievalid=2592000000; // 30 days (1000*60*60*24*30)
             time += cookievalid;
 			now.setTime(time);
 			document.cookie ='lang='+lang+';path=/'+';domain='+wl.host+';expires='+now;
