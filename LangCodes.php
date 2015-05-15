@@ -6,13 +6,17 @@
 class LangCodes{
     public function getLanguage($code){
         $all_lang=array(
-        'fr_FR'=>_('French, FR'),
-        'en_US'=>_('English, US'),
-        'es_ES'=>_('Spanish, ES'),
-        'es_MX'=>_('Spanish, MX'),
-        'it_IT'=>_('Italian, IT')
+        'fr'=>'fr_FR',
+        'en'=>'en_US'
         );
         return $all_lang[$code];
+    }
+    public function getNameLang($code_lang){
+        $name_lang=array(
+        'fr'=>_('French'),
+        'en'=>_('English')
+        );
+        return $name_lang[$code_lang];
     }
 }
 ?>

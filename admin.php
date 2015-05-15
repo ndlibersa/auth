@@ -22,10 +22,6 @@ session_start();
 
 include_once 'directory.php';
 
-// Include file of language codes
-include_once 'LangCodes.php';
-$lang_name = new LangCodes();
-
 if (isset($_SESSION['loginID'])){
 	$loginID=$_SESSION['loginID'];
 }
@@ -54,10 +50,15 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 <?php
    // Add translation for the JavaScript files
     global $http_lang;
+    $str = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
+    $default_l = $lang_name->getLanguage($str);
+    if($default_l==null || empty($default_l)){$default_l=$str;}
     if(isset($_COOKIE["lang"])){
         if($_COOKIE["lang"]==$http_lang && $_COOKIE["lang"] != "en_US"){
             echo "<link rel='gettext' type='application/x-po' href='./locale/".$http_lang."/LC_MESSAGES/messages.po' />";
         }
+    }else if($default_l==$http_lang && $default_l != "en_US"){
+            echo "<link rel='gettext' type='application/x-po' href='./locale/".$http_lang."/LC_MESSAGES/messages.po' />";
     }
 ?>
 </head>
@@ -103,25 +104,25 @@ if (($user->isAdmin) && ($user->getOpenSession())){
                     closedir($dh); 
                 } 
             }else {
-                echo "<br>Invalid route!"; 
+                echo "<br>"._("Invalid translation route!"); 
             }
             // Get language of navigator
-            $defLang = str_replace('-','_',substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,5));
+            $defLang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
             
             // Show an ordered list
             sort($lang); 
             for($i=0; $i<count($lang); $i++){
                 if(isset($_COOKIE["lang"])){
                     if($_COOKIE["lang"]==$lang[$i]){
-                        echo "<option value='".$lang[$i]."' selected='selected'>".$lang_name->getLanguage($lang[$i])."</option>";
+                        echo "<option value='".$lang[$i]."' selected='selected'>".$lang_name->getNameLang(substr($lang[$i],0,2))."</option>";
                     }else{
-                        echo "<option value='".$lang[$i]."'>".$lang_name->getLanguage($lang[$i])."</option>";
+                        echo "<option value='".$lang[$i]."'>".$lang_name->getNameLang(substr($lang[$i],0,2))."</option>";
                     }
                 }else{
-                    if($defLang==$lang[$i]){
-                        echo "<option value='".$lang[$i]."' selected='selected'>".$lang_name->getLanguage($lang[$i])."</option>";
+                    if($defLang==substr($lang[$i],0,2)){
+                        echo "<option value='".$lang[$i]."' selected='selected'>".$lang_name->getNameLang(substr($lang[$i],0,2))."</option>";
                     }else{
-                        echo "<option value='".$lang[$i]."'>".$lang_name->getLanguage($lang[$i])."</option>";
+                        echo "<option value='".$lang[$i]."'>".$lang_name->getNameLang(substr($lang[$i],0,2))."</option>";
                     }
                 }
             }
