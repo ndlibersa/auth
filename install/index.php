@@ -25,22 +25,22 @@ if ($step == "3"){
 	}else{
 
 		//first check connecting to host
-		$link = mysql_connect("$database_host", "$database_username", "$database_password");
+		$link = mysqli_connect("$database_host", "$database_username", "$database_password");
 		if (!$link) {
-			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysql_error();
+			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysqli_error($link);
 		}else{
 
 			//next check that the database exists
-			$dbcheck = mysql_select_db("$database_name");
+			$dbcheck = mysqli_select_db($link, "$database_name");
 			if (!$dbcheck) {
-				$errorMessage[] = "Unable to access the database '" . $database_name . "'.  Please verify it has been created.<br />MySQL Error: " . mysql_error();
+				$errorMessage[] = "Unable to access the database '" . $database_name . "'.  Please verify it has been created.<br />MySQL Error: " . mysqli_error($link);
 			}else{
 
 				//make sure the tables don't already exist - otherwise this script will overwrite all of the data!
 				$query = "SELECT count(*) count FROM information_schema.`TABLES` WHERE table_schema = '" . $database_name . "' AND table_name='User' and table_rows > 0";
 
 				//if User table exists, error out
-				if (!$row = mysql_fetch_array(mysql_query($query))){
+				if (!$row = mysqli_fetch_array(mysqli_query($link, $query))){
 					$errorMessage[] = "Please verify your database user has access to select from the information_schema MySQL metadata database.";
 				}else{
 					if ($row['count'] > 0 ){
@@ -68,9 +68,9 @@ if ($step == "3"){
 									//replace the DATABASE_NAME parameter with what was actually input
 									$stmt = str_replace("_DATABASE_NAME_", $database_name, $stmt);
 
-									$result = mysql_query($stmt);
+									$result = mysqli_query($link, $stmt);
 									if (!$result){
-										$errorMessage[] = mysql_error() . "<br /><br />For statement: " . $stmt;
+										$errorMessage[] = mysqli_error($link) . "<br /><br />For statement: " . $stmt;
 										 break;
 									}
 								}
@@ -97,9 +97,9 @@ if ($step == "3"){
 										//replace the DATABASE_NAME parameter with what was actually input
 										$stmt = str_replace("_DATABASE_NAME_", $database_name, $stmt);
 
-										$result = mysql_query($stmt);
+										$result = mysqli_query($link, $stmt);
 										if (!$result){
-											$errorMessage[] = mysql_error() . "<br /><br />For statement: " . $stmt;
+											$errorMessage[] = mysqli_error($link) . "<br /><br />For statement: " . $stmt;
 											 break;
 										}
 									}
@@ -137,20 +137,20 @@ if ($step == "3"){
 	}else{
 
 		//first check connecting to host
-		$link = mysql_connect("$database_host", "$database_username", "$database_password");
+		$link = mysqli_connect("$database_host", "$database_username", "$database_password");
 		if (!$link) {
-			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysql_error();
+			$errorMessage[] = "Could not connect to the server '" . $database_host . "'<br />MySQL Error: " . mysqli_error($link);
 		}else{
 
 			//next check that the database exists
-			$dbcheck = mysql_select_db("$database_name");
+			$dbcheck = mysqli_select_db($link, "$database_name");
 			if (!$dbcheck) {
-				$errorMessage[] = "Unable to access the database '" . $database_name . "'.  Please verify it has been created.<br />MySQL Error: " . mysql_error();
+				$errorMessage[] = "Unable to access the database '" . $database_name . "'.  Please verify it has been created.<br />MySQL Error: " . mysqli_error($link);
 			}else{
 				//passed db host, name check, test that user can select from Auth database
-				$result = mysql_query("SELECT loginID FROM " . $database_name . ".User WHERE loginID like '%coral%';");
+				$result = mysqli_query($link, "SELECT loginID FROM " . $database_name . ".User WHERE loginID like '%coral%';");
 				if (!$result){
-					$errorMessage[] = "Unable to select from the User table in database '" . $database_name . "' with user '" . $database_username . "'.  Error: " . mysql_error();
+					$errorMessage[] = "Unable to select from the User table in database '" . $database_name . "' with user '" . $database_username . "'.  Error: " . mysqli_error($link);
 				}
 
 			}
