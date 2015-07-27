@@ -15,6 +15,10 @@
 **************************************************************************************************************************
 */
 
+var gt = new Gettext({ 'domain' : 'messages' });
+function _(msgid) {
+    return gt.gettext(msgid);
+}
 
 $(document).ready(function(){
 
@@ -47,53 +51,42 @@ function submitUserForm(){
 	// ajax call to add/update
 	$.post("ajax_processing.php?action=submitUser", { loginID: $("#textLoginID").val(), editLoginID: $("#editLoginID").val(), password: $("#password").val(), adminInd: getCheckboxValue('adminInd')  } ,
 		function(data){
-
 			tb_remove();		
 			updateUsers();
 			return false;
-			
 		}
 	);
-
-
 	return false;
   
   }
 }  
-  
-  
-  
-  //validates fields
-  function validateForm (){
-  	myReturn=0;
-  	
-  	if (($("#password").val() != '') && ($("#password").val() != $("#passwordReenter").val())){
-  		$("#span_errors").html('Passwords do not match');
-  		myReturn="1";
-  	}
 
-  	if (($("#editLoginID").val() == '') && (($("#password").val() == ''))){
-  		$("#span_errors").html('Password is required');
-  		myReturn="1";
-  	}
-  	
-  
-  	if (myReturn == "1"){
-  		return false;
-  	}else{
-  		return true;
-  	}
-   }
-  
+function validateForm (){
+    var control=true;
+    if (($("#password").val() != '') && ($("#password").val() != $("#passwordReenter").val())){
+        $("#span_errors").html(_("Passwords do not match"));
+        $("#passwordReenter").focus();
+        control = false;
+    }
 
-
-
+    if (($("#editLoginID").val() == '') && (($("#password").val() == ''))){
+        $("#span_errors").html(_("Password is required"));
+        $("#password").focus();
+        control = false;
+    }
+    if (($("#textLoginID").val() == '')){
+        $("#span_errors").html(_("UserID is required"));
+        $("#textLoginID").focus();
+        control = false;
+    }
+    return control;
+}
 
   function bind_removes(){
 
 
   	 $(".deleteUser").unbind('click').click(function () {
-	  if (confirm("Do you really want to delete this user?") == true) {
+	  if (confirm(_("Do you really want to delete this user?")) == true) {
 		  $.ajax({
 			 type:       "GET",
 			 url:        "ajax_processing.php",

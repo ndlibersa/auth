@@ -1,7 +1,7 @@
 html { 
  height: 100%; 
  margin: 0;
- padding: 0
+ padding: 0;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
  font-family: "arial";
  font-size:0.99em;
  margin: 15px;
- padding: 0
+ padding: 0;
 }
 
 
@@ -19,11 +19,12 @@ body {
 	font-size:0.8em;
 }
 
-label{
- float: left;
- width: 100px;
- font-weight: bold;
- margin-left:67px;
+label {
+    float: left;
+    width: 150px;
+    font-weight: bold;
+    margin-left: 18px;
+    text-align: right;
 }
 
 .formLabel{
@@ -41,7 +42,7 @@ input, select, multiple, textarea{
 
 
 
-.submitButton {color: #3D545D; font-family: "arial"; font-size: 95%; font-weight: medium;}
+.submitButton {color: #3D545D; font-family: "arial"; font-size: 95%;}
 
 textarea{
  width: 250px;
@@ -82,21 +83,21 @@ a.helpfulLink {color:#526972;}
 
 .smallText{color:#3D545D;font-size:92%;}
 .smallerText{color:#3D545D;font-size:85%;}
-.redText{color:red}
+.redText{color:red;}
 .smallRedText{font-size:85%;color:red;}
 .darkRedText{color:#7a0026;}
 .bigDarkRedText{font-size:125%; color:#7a0026;}
 .smallDarkRedText{font-size:85%;color:#7a0026;}
-.normalText{color:#3D545D}
-.smallBlueText{font-size:85%;font-weight:normal; color:#526972}
-.smallGreyText{font-size:85%;font-weight:normal; color:gray}
+.normalText{color:#3D545D;}
+.smallBlueText{font-size:85%;font-weight:normal; color:#526972;}
+.smallGreyText{font-size:85%;font-weight:normal; color:gray;}
 .boldBlueText{font-weight:bold; color:#526972;}
 .boldText{font-weight:bold;}
 .bigBlueText{font-size:125%; color:#526972;}
 .headerText {font-size:125%;font-weight:bold; }
 
-select option { color: #3D545D; font-family: "arial"; font-size: 8pt; font-weight: medium; }
-.optionStyle { color: #3D545D; font-family: "arial"; font-size: 8pt; font-weight: medium; }
+select option { color: #3D545D; font-family: "arial"; font-size: 8pt;}
+.optionStyle { color: #3D545D; font-family: "arial"; font-size: 8pt;}
 
 
 
@@ -278,8 +279,35 @@ table.linedDataTable tr {
 	vertical-align:top;
 }
 
+.loginButton{
+    width: 131px;
+    height: 30px;
+    color: #3D545D;
+    background: #e4f5fc; /* Old browsers */
+    background: linear-gradient(to bottom, #c8d8e9 3%,#e2f0ff 52%,#c7cefc 100%); /* W3C */
+    border: none;
+    border-radius: 5px;
+    font-size: 12pt;
+    font-weight: bolder;
+    cursor: pointer;
+}
 
-
-
-
-
+/* Change language */
+.dropDownLang{
+    color: #3D545D;
+    background: #e4f5fc; /* Old browsers */
+    background: linear-gradient(to bottom, #c8d8e9 3%,#e2f0ff 52%,#c7cefc 100%); /* W3C */
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+    width: auto;
+    height:20px;
+    cursor: pointer;
+}
+.fontText{
+    font-size: 11pt;
+}
+.boxRight{
+    position:absolute; 
+    margin-left:57%;
+}
