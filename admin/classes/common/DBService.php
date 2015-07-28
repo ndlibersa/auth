@@ -47,23 +47,36 @@ class DBService extends Object {
 		$databaseName = $this->config->database->name;
 		$this->db = mysqli_connect($host, $username, $password, $databaseName);
 		$this->checkForError();
+        $this->db->set_charset('utf8');
 	}
-
 
 	protected function disconnect() {
-		//mysqli_close($this->db);
+		//$this->db->close();
 	}
-
 
 	public function changeDB($databaseName) {
 		//$databaseName='coral_reporting_pprd';
-		mysqli_select_db($this->db, $databaseName);
+		$this->db->select_db($databaseName);
 		$this->checkForError();
+	}
+
+	public function escapeString($value) {
+		return $this->db->escape_string($value);
+	}
+
+	public function getDatabase() {
+		return $this->db;
+	}
+
+    public function query($sql) {
+        $result = $this->db->query($sql);
+        $this->checkForError();
+        return $result;
 	}
 
 	public function processQuery($sql, $type = NULL) {
     	//echo $sql. "<br />";
-		$result = mysqli_query($this->db, $sql);
+		$result = $this->db->query($sql);
 		$this->checkForError();
 		$data = array();
 
@@ -72,16 +85,16 @@ class DBService extends Object {
 			if ($type == 'assoc') {
 				$resultType = MYSQLI_ASSOC;
 			}
-			while ($row = mysqli_fetch_array($result, $resultType)) {
-				if (mysqli_affected_rows($this->db) > 1) {
+			while ($row = $result->fetch_array($resultType)) {
+				if ($this->db->affected_rows > 1) {
 					array_push($data, $row);
 				} else {
 					$data = $row;
 				}
 			}
-			mysqli_free_result($result);
+			$result->free();
 		} else if ($result) {
-			$data = mysqli_insert_id($this->db);
+			$data = $this->db->insert_id;
 		}
 
 		return $data;
