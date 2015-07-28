@@ -63,7 +63,7 @@ if(array_key_exists('logout', $_GET)){
 	}
 
 //the user is trying to log in
-}else if ($_POST['loginID'] && $_POST['password']){
+}else if (isset($_POST['loginID']) && isset($_POST['password'])){
 
 	$loginID = $_POST['loginID'];
 	$password = $_POST['password'];

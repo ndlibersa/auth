@@ -2,17 +2,17 @@
 //this script runs entire installation process in 5 steps
 
 //take "step" variable to determine which step the current is
-$step = $_POST['step'];
+$step = isset($_POST['step']) ? $_POST['step'] : '0';
 
 
 //perform field validation(steps 3-5) and database connection tests (steps 3 and 4) and send back to previous step if not working
 $errorMessage = array();
 if ($step == "3"){
 	//first, validate all fields are filled in
-	$database_host = trim($_POST['database_host']);
-	$database_username = trim($_POST['database_username']);
-	$database_password = trim($_POST['database_password']);
-	$database_name = trim($_POST['database_name']);
+	$database_host = (isset($_POST['database_host']) ? trim($_POST['database_host']) : null);
+	$database_username = (isset($_POST['database_username']) ? trim($_POST['database_username']) : null);
+	$database_password = (isset($_POST['database_password']) ? trim($_POST['database_password']) : null);
+	$database_name = (isset($_POST['database_name']) ? trim($_POST['database_name']) : null);
 
 	if (!$database_host) $errorMessage[] = 'Host name is required';
 	if (!$database_name) $errorMessage[] = 'Database name is required';
@@ -115,11 +115,27 @@ if ($step == "3"){
 }else if ($step == "4"){
 
 	//first, validate all fields are filled in
-	$database_host = trim($_POST['database_host']);
-	$database_username = trim($_POST['database_username']);
-	$database_password = trim($_POST['database_password']);
-	$database_name = trim($_POST['database_name']);
-	$session_timeout = trim($_POST['session_timeout']);
+	$database_host = (isset($_POST['database_host']) ? trim($_POST['database_host']) : null);
+	$database_username = (isset($_POST['database_username']) ? trim($_POST['database_username']) : null);
+	$database_password = (isset($_POST['database_password']) ? trim($_POST['database_password']) : null);
+	$database_name = (isset($_POST['database_name']) ? trim($_POST['database_name']) : null);
+	$session_timeout = (isset($_POST['session_timeout']) ? trim($_POST['session_timeout']) : null);
+
+    $ldap = array(
+        'ldap_enabled'     =>(isset($_POST['ldap_enabled']) ? 'Y' : 'N'),
+        'host'        =>(isset($_POST['ldap_host']) ? $_POST['ldap_host'] : null),
+        'port'        =>(isset($_POST['ldap_port']) ? $_POST['ldap_port'] : null),
+        'search_key'  =>(isset($_POST['ldap_search_key']) ? $_POST['ldap_search_key'] : null),
+        'base_dn'     =>(isset($_POST['ldap_base_dn']) ? $_POST['ldap_base_dn'] : null),
+        'bindAccount' =>(isset($_POST['ldap_bind_account']) ? $_POST['ldap_bind_account'] : null),
+        'bindPassword'=>(isset($_POST['ldap_bind_password']) ? $_POST['ldap_bind_password'] : null)
+    );
+
+    if ($ldap['ldap_enabled']=='Y') {
+        if (!$ldap['host']) $errorMessage[] = "LDAP Host is required for LDAP";
+        if (!$ldap['search_key']) $errorMessage[] = "LDAP Search Key is required for LDAP";
+        if (!$ldap['base_dn']) $errorMessage[] = "LDAP Base DN is required for LDAP";
+    }
 
 	if (!$database_username) $errorMessage[] = 'User name is required';
 	if (!$database_password) $errorMessage[] = 'Password is required';
@@ -177,6 +193,10 @@ if ($step == "3"){
 			$iniData[] = "username = \"" . $database_username . "\"";
 			$iniData[] = "password = \"" . $database_password . "\"";
 
+            $iniData[] = "\n[ldap]";
+            foreach ($ldap as $fname => $fvalue) {
+                $iniData[] = "$fname = \"$fvalue\"";
+            }
 			fwrite($fh, implode("\n",$iniData));
 			fclose($fh);
 		}
@@ -198,6 +218,8 @@ if ($step == "3"){
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>CORAL Installation</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/index.js"></script>
 </head>
 <body>
 <center>
@@ -207,7 +229,7 @@ if ($step == "3"){
 <div style="text-align:left;">
 
 
-<?php if(!$step){ ?>
+<?php if($step=='0'){ ?>
 
 	<h3>Welcome to a new CORAL Auth installation!</h3>
 	This installation will:
@@ -281,8 +303,10 @@ if ($step == "3"){
 //second step - ask for DB info to run DDL
 } else if ($step == '2') {
 
-	if (!$database_host) $database_host='localhost';
-	if (!$database_name) $database_name='coral_auth_prod';
+	if (!isset($database_host)) $database_host='localhost';
+	if (!isset($database_name)) $database_name='coral_auth_prod';
+    if (!isset($database_username)) $database_username = "";
+    if (!isset($database_password)) $database_password = "";
 	?>
 		<form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
 		<h3>MySQL info with permissions to create tables</h3>
@@ -299,7 +323,7 @@ if ($step == "3"){
 			<tr>
 				<td>&nbsp;Database Host</td>
 				<td>
-					<input type="text" name="database_host" value='<?php echo $database_host?>' size="30">
+					<input type="text" name="database_host" size="30" value='<?php echo $database_host?>'>
 				</td>
 			</tr>
 			<tr>
@@ -339,7 +363,26 @@ if ($step == "3"){
 //third step - ask for DB info to log in from CORAL
 } else if ($step == '3') {
 
-	if (!$session_timeout) $session_timeout='3600';
+	if (!isset($session_timeout)) $session_timeout='3600';
+
+    $ldap = array('host'=>'', 'port'=>'', 'search_key'=>'', 'base_dn'=>'', 'bindAccount'=>'','bindPassword'=>'');
+    if (isset($_POST['ldap_enabled'])) {
+        $ldap['ldap_enabled'] = 'Y';
+        if (isset($_POST['ldap_host']))
+            $ldap['host'] = $_POST['ldap_host'];
+        if (isset($_POST['ldap_port']))
+            $ldap['port'] = $_POST['ldap_port'];
+        if (isset($_POST['ldap_search_key']))
+            $ldap['search_key'] = $_POST['ldap_search_key'];
+        if (isset($_POST['ldap_base_dn']))
+            $ldap['base_dn'] = $_POST['ldap_base_dn'];
+        if (isset($_POST['ldap_bind_account']))
+            $ldap['bindAccount'] = $_POST['ldap_bind_account'];
+        if (isset($_POST['ldap_bind_password']))
+            $ldap['bindPassword'] = $_POST['ldap_bind_password'];
+    } else {
+        $ldap['ldap_enabled'] = 'N';
+    }
 
 	?>
 		<form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
@@ -377,9 +420,63 @@ if ($step == "3"){
 					<input type="text" name="session_timeout" size="30" value="<?php echo $session_timeout?>">
 				</td>
 			</tr>
-			<tr>
+
+            <tr>
 				<td colspan=2>&nbsp;</td>
 			</tr>
+
+            <tr>
+				<td>&nbsp;Enable LDAP</td>
+				<td>
+					<input type="checkbox" id="ldap_enabled" name="ldap_enabled" size="30" <?php echo ($ldap['ldap_enabled']=='Y')?'checked="true"':''?> onclick="ShowLDAP()">
+				</td>
+			</tr>
+            <tr>
+                <td>&nbsp;LDAP Host</td>
+                <td>
+                    <input type="text" name="ldap_host" class="ldap" size="30" value="<?php echo $ldap['host']?>" <?php echo ($ldap['ldap_enabled']=='Y')?'':'disabled="disabled"'?>>
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;LDAP Port</td>
+                <td>
+                    <input type="text" name="ldap_port" class="ldap" size="30" value="<?php echo $ldap['port']?>" <?php echo ($ldap['ldap_enabled']=='Y')?'':'disabled="disabled"'?>>
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;LDAP Search Key</td>
+                <td>
+                    <input type="text" name="ldap_search_key" class="ldap" size="30" value="<?php echo $ldap['search_key']?>" <?php echo ($ldap['ldap_enabled']=='Y')?'':'disabled="disabled"'?>>
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;LDAP Base DN</td>
+                <td>
+                    <input type="text" name="ldap_base_dn" class="ldap" size="30" value="<?php echo $ldap['base_dn']?>" <?php echo ($ldap['ldap_enabled']=='Y')?'':'disabled="disabled"'?>>
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;LDAP Bind Account</td>
+                <td>
+                    <input type="text" name="ldap_bind_account" class="ldap" size="30" value="<?php echo $ldap['bindAccount']?>" <?php echo ($ldap['ldap_enabled']=='Y')?'':'disabled="disabled"'?>>
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;LDAP Bind Password</td>
+                <td>
+                    <input type="password" name="ldap_bind_password" class="ldap" size="30" value="<?php echo $ldap['bindPassword']?>" <?php echo ($ldap['ldap_enabled']=='Y')?'':'disabled="disabled"'?>>
+                </td>
+            </tr>
+
+            <tr>
+				<td colspan=2>&nbsp;</td>
+			</tr>
+
 			<tr>
 				<td align='left'>&nbsp;</td>
 				<td align='left'>
@@ -389,9 +486,11 @@ if ($step == "3"){
 				<input type="button" value="Cancel" onclick="document.location.href='index.php'">
 				</td>
 			</tr>
-
 		</table>
 		</form>
+    <script>
+    ShowLDAP();
+    </script>
 <?php
 //fourth step - ask for other settings in configuration.ini
 } else if ($step == '4') {

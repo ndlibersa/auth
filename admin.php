@@ -24,12 +24,10 @@ include_once 'directory.php';
 
 if (isset($_SESSION['loginID'])){
 	$loginID=$_SESSION['loginID'];
+    $user = new User(new NamedArguments(array('primaryKey' => $loginID)));
 }
 
-$user = new User(new NamedArguments(array('primaryKey' => $loginID)));
-
-
-if (($user->isAdmin) && ($user->getOpenSession())){
+if (isset($user) && ($user->isAdmin) && ($user->getOpenSession())){
 
 ?>
 
@@ -97,7 +95,7 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 
 }else{
 
-	if ($user->getOpenSession()){
+	if (isset($user) && $user->getOpenSession()){
 		header('Location: index.php?service=admin.php&invalid');
 	}else{
 		header('Location: index.php?service=admin.php&admin');
