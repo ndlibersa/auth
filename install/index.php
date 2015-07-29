@@ -128,7 +128,7 @@ if ($step == "3"){
         'search_key'  =>(isset($_POST['ldap_search_key']) ? $_POST['ldap_search_key'] : null),
         'base_dn'     =>(isset($_POST['ldap_base_dn']) ? $_POST['ldap_base_dn'] : null),
         'bindAccount' =>(isset($_POST['ldap_bind_account']) ? $_POST['ldap_bind_account'] : null),
-        'bindPassword'=>(isset($_POST['ldap_bind_password']) ? $_POST['ldap_bind_password'] : null)
+        'bindPass'=>(isset($_POST['ldap_bind_password']) ? $_POST['ldap_bind_password'] : null)
     );
 
     if ($ldap['ldap_enabled']=='Y') {
@@ -365,7 +365,7 @@ if ($step == "3"){
 
 	if (!isset($session_timeout)) $session_timeout='3600';
 
-    $ldap = array('host'=>'', 'port'=>'', 'search_key'=>'', 'base_dn'=>'', 'bindAccount'=>'','bindPassword'=>'');
+    $ldap = array('host'=>'', 'port'=>'', 'search_key'=>'', 'base_dn'=>'', 'bindAccount'=>'','bindPass'=>'');
     if (isset($_POST['ldap_enabled'])) {
         $ldap['ldap_enabled'] = 'Y';
         if (isset($_POST['ldap_host']))
@@ -379,7 +379,7 @@ if ($step == "3"){
         if (isset($_POST['ldap_bind_account']))
             $ldap['bindAccount'] = $_POST['ldap_bind_account'];
         if (isset($_POST['ldap_bind_password']))
-            $ldap['bindPassword'] = $_POST['ldap_bind_password'];
+            $ldap['bindPass'] = $_POST['ldap_bind_password'];
     } else {
         $ldap['ldap_enabled'] = 'N';
     }
@@ -469,7 +469,7 @@ if ($step == "3"){
             <tr>
                 <td>&nbsp;LDAP Bind Password</td>
                 <td>
-                    <input type="password" name="ldap_bind_password" class="ldap" size="30" value="<?php echo $ldap['bindPassword']?>" <?php echo ($ldap['ldap_enabled']=='Y')?'':'disabled="disabled"'?>>
+                    <input type="password" name="ldap_bind_password" class="ldap" size="30" value="<?php echo $ldap['bindPass']?>" <?php echo ($ldap['ldap_enabled']=='Y')?'':'disabled="disabled"'?>>
                 </td>
             </tr>
 
