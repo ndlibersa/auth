@@ -43,6 +43,7 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
 <link rel="SHORTCUT ICON" href="images/clownfishfavicon.ico" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script type="text/javascript" src="js/plugins/jquery.js"></script>
 <script type="text/javascript" src="js/plugins/thickbox.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
@@ -56,24 +57,24 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 	<br />
 
 
-	<div style="width:451px; height:91px;background-image:url('images/authtitle.gif');background-repeat:no-repeat;text-align:right;">
+	<div style="width:418px;height:89px;margin-top:20px;background-image:url('images/authtitle.gif');background-repeat:no-repeat;">
 	</div>
 
-	<div class='bordered' style='width:447px;margin-left:2px;'>
+	<div class='bordered' style='width:416px;'>
 
 		<br />
-		<div class='headerText' style='text-align: left;margin:0px 60px 3px 60px;'>Users</div>
+		<div class='headerText' style='text-align: left;margin:0 0 3px 60px;'>Users</div>
 		<div class='smallDarkRedText' style='margin-bottom:5px;'>* Login ID must match the login ID set up in the modules</div>
 
 
-		<div style='text-align:left;margin:0px 60px 60px 60px;' id='div_users'>
+		<div style='text-align:left;margin:0px 60px 60px 38px;' id='div_users'>
 		<br />
 		<br />
 		<img src='images/circle.gif'>  <span style='font-size:90%'>Processing...</span>
 		</div>
 	</div>
 
-	<div class='smallerText' style='text-align:center; margin-top:13px;'><a href='index.php'>Login page</a></div>
+	<div class='smallerText' style='text-align:center; margin-top:13px;'><a href='index.php' id='login-link'>Login page</a></div>
 
 
 </form>

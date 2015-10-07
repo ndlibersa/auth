@@ -31,7 +31,7 @@ switch ($_GET['action']) {
 
 		if (count($usersArray) > 0){
 			?>
-			<table class='linedDataTable' style='width:327px;'>
+			<table class='linedDataTable' style='width:340px;'>
 				<tr>
 				<th>Login ID</th>
 				<th>Admin?</th>

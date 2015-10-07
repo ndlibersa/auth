@@ -167,7 +167,8 @@ if(array_key_exists('admin', $_GET)){
 <title>CORAL Authentication</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
-<link rel="SHORTCUT ICON" href="images/clownfishfavicon.ico" />
+<link rel="SHORTCUT ICON" href="images/favicon.ico" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script type="text/javascript" src="js/plugins/jquery.js"></script>
 <script type="text/javascript" src="js/plugins/thickbox.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
@@ -181,7 +182,7 @@ if(array_key_exists('admin', $_GET)){
 	<br />
 
 
-	<div style="width:451px; height:307px;background-image:url('images/authpage.gif');background-repeat:no-repeat;text-align:right;">
+	<div style="width:418px; height:307px;background-image:url('images/authpage.gif');background-repeat:no-repeat;text-align:right;" id="login-form">
 		<label style='text-align:left;width:100%;margin-top:100px;font-weight:normal;'><span class='smallerText'><?php echo $message; ?></span><span class='smallDarkRedText'><?php echo $errorMessage; ?></span></label><br />
 		<label for='loginID' style='margin-top:10px;'>Login ID:&nbsp;&nbsp;</label>
 		<input type='text' id='loginID' name='loginID' value="<?php echo $inputLoginID; ?>" style='margin-top:10px;width:170px;' />
@@ -198,7 +199,7 @@ if(array_key_exists('admin', $_GET)){
 
 	</div>
 
-	<div class='smallerText' style='text-align:center; margin-top:13px;'><a href='admin.php'>Admin page</a></div>
+	<div class='smallerText' style='text-align:center; margin-top:13px;'><a href='admin.php' id='admin-link'>Admin page</a></div>
 
 </form>
 

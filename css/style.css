@@ -11,7 +11,9 @@ body {
  font-family: "arial";
  font-size:0.99em;
  margin: 15px;
- padding: 0
+ padding: 0;
+ background-color: #f3f3f3;
+ background: #E7E8E8 url(../images/bg-gray-texture.jpg) repeat top left;
 }
 
 
@@ -37,11 +39,21 @@ label{
 input, select, multiple, textarea{
  float: left;
  margin-top: 5px;
+ cursor: pointer;
 }
 
 
+.submitButton {
+     color: #FFFFFF;
+     font-family: "Arial", sans-serif;
+     font-size: 11px;
+     font-weight: normal;
+     background: #1b76a9;
+     border: none;
+     padding: 5px 10px;
+     text-transform: capitalize;
+}
 
-.submitButton {color: #3D545D; font-family: "arial"; font-size: 95%; font-weight: medium;}
 
 textarea{
  width: 250px;
@@ -84,9 +96,21 @@ a.helpfulLink {color:#526972;}
 .smallerText{color:#3D545D;font-size:85%;}
 .redText{color:red}
 .smallRedText{font-size:85%;color:red;}
-.darkRedText{color:#7a0026;}
-.bigDarkRedText{font-size:125%; color:#7a0026;}
-.smallDarkRedText{font-size:85%;color:#7a0026;}
+
+.darkRedText {
+ color: #CD0000;
+}
+
+.bigDarkRedText {
+ font-size: 125%;
+ color: #CD0000;
+}
+
+.smallDarkRedText {
+ font-size: 85%;
+ color: #CD0000;
+}
+
 .normalText{color:#3D545D}
 .smallBlueText{font-size:85%;font-weight:normal; color:#526972}
 .smallGreyText{font-size:85%;font-weight:normal; color:gray}
@@ -105,13 +129,15 @@ select option { color: #3D545D; font-family: "arial"; font-size: 8pt; font-weigh
 
 
 div.formTitle {
+	width: auto !important;
 	margin: 0;
-	padding: 2px 3px 2px 2px;
+	padding: 6px;
 	border-width: 1px 0 0 0;
 	border-style: solid;
 	border-color: #e6e5e9;
-	background-color: #e9edf0;
+	background-color: #cad7e1;
 	-moz-border-radius: 0px;
+	background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
 }
 
 
@@ -131,6 +157,7 @@ table.surroundBox {
 	border-collapse: collapse;
 	border-spacing: 0;
 	font-size:100%;
+	width: 100% !important;
 }
 
 table.surroundBox td {
@@ -178,14 +205,14 @@ table.noBorder td { border:0; }
 
 
 div.bordered {
-border-bottom: 1px solid #adc6de;
-border-left: 1px solid #adc6de;
-border-right: 1px solid #adc6de;
-background: white;
-margin:0px;
-padding:0px;
+border-bottom: 1px solid #5295ba ;
+border-left: 1px solid #5295ba ;
+border-right: 1px solid #5295ba ;
+background: none;
+margin: 0px;
+padding: 0px;
 color: #3D545D;
-border-spacing:0px;
+border-spacing: 0px;
 }
 
 
@@ -230,56 +257,126 @@ border-collapse: collapse;
 background: white;
 }
 
-
-
-
-
 .adminRightHeader{font-size:115%; font-weight:bold; color:#3D545D; margin-bottom:5px; }
 
-
-
-
-table.linedDataTable {	
-	border-width: 0 1px 1px 1px;
-	border-style: solid;
-	border-color: #e6e5e9;
-	border-collapse: collapse;
-	border-spacing: 0;
-	font-size:95%;
-	margin-bottom:5px;
+table.linedDataTable {
+     /*-*/border-width: 1px;
+     border-style: solid;
+     /*-*/border-color: #e6e5e9;
+     border-collapse: collapse;
+     border-spacing: 0;
+     font-size:95%;
+     margin-bottom:5px;
 }
 
 table.linedDataTable td {
-	margin: 0;
-	padding: 3px 3px 3px 3px;
-	border-width: 1px 0 0 0;
-	border-style: solid;
-	border-color: #e6e5e9;
-	background-color: white;
-	-moz-border-radius: 0px;
+     margin: 0;
+     /*-*/padding: 6px;
+     /*-*/border-width: 1px;
+     border-style: solid;
+     border-color: #e6e5e9;
+     background-color: white;
+     -moz-border-radius: 0px;
 }
 
 table.linedDataTable td.complete {
-	background-color: #f4f4f4;
+     background-color: #f4f4f4;
 }
 
 
 table.linedDataTable th {
-	margin: 0;
-	padding: 2px 3px 2px 2px;
-	border-width: 1px 0 0 0;
-	border-style: solid;
-	border-color: #e6e5e9;
-	background-color: #f6f8fa;
-	-moz-border-radius: 0px;
+     margin: 0;
+     /*-*/padding: 6px;
+     border-width: 1px;
+     border-style: solid;
+     border-color: #e9edf0;
+     background-color: #e9edf0;
+     -moz-border-radius: 0px;
+     /*-*/background: rgba(200, 200, 200, 0.5) url(../images/bg-diagonal-stripes.png) repeat top left !important;
 }
 
-table.linedDataTable tr {	
-	vertical-align:top;
+table.linedDataTable tr {
+     vertical-align:top;
 }
 
+/*--- Additional Custom CSS ---*/
 
+label:nth-of-type(3) {
+  margin-top: 5px;
+}
 
+.smallerText a:hover {
+     color: #ccc;
+}
 
+/*--- New Custom CSS ---*/
 
+#login-form {
+     margin-top: 20px;
+}
 
+#login-form label:nth-of-type(1) {
+     margin: 110px 0 15px 0 !important;
+     text-align: center !important;
+}
+
+a#admin-link:before {
+     font-family: FontAwesome;
+     content: "\f023";
+     font-size: 13px;
+     margin-right: 5px;
+}
+
+a#admin-link {
+     text-decoration: none;
+     text-transform: capitalize;
+     font-size: 14px;
+}
+
+a#admin-link:hover {
+     color: #ccc;
+}
+
+a#login-link:before {
+     font-family: FontAwesome;
+     content: "\f007";
+     font-size: 13px;
+     margin-right: 5px;
+}
+
+a#login-link {
+     text-decoration: none;
+     text-transform: capitalize;
+     font-size: 14px;
+}
+
+a#login-link:hover {
+     color: #ccc;
+}
+
+#loginbutton {
+     margin-top: 13px !important;
+}
+
+/*--- Custom CSS ---*/
+
+a#addUser:before {
+     font-family: FontAwesome;
+     content: "\f055";
+     font-size: 11px;
+     margin-right: 5px;
+}
+
+a#addUser {
+     text-decoration: none;
+     text-transform: capitalize;
+     font-size: 12px;
+}
+
+a#addUser:hover {
+     color: #ccc;
+}
+
+.bordered .smallDarkRedText {
+     margin-bottom: 10px !important;
+}
