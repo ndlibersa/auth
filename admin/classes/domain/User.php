@@ -79,14 +79,14 @@ class User extends DatabaseObject {
 			// connect to ldap server
 			if($ldapport != ''){
 				$ldapconn = ldap_connect($host, $ldapport)
-				    or die("Could not connect to LDAP server.");
+				    or die(_("Could not connect to LDAP server."));
 
 				ldap_set_option ($ldapconn, LDAP_OPT_REFERRALS, 0);
 				ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
 
 			}else{
 				$ldapconn = ldap_connect($host)
-				    or die("Could not connect to LDAP server.");
+				    or die(_("Could not connect to LDAP server."));
 			}
 
 			
@@ -94,7 +94,7 @@ class User extends DatabaseObject {
 				if($bindAccount != ""){
 					if($bindPass == ''){
 						error_log("A bind password must be provided with a bind account");
-						die("There is a problem with the LDAP configuration, contact your server administrator.");
+						die(_("There is a problem with the LDAP configuration, contact your server administrator."));
 					}
 					//bind to ldap server
 					$ldapbind = ldap_bind($ldapconn, $bindAccount, $bindPass);
