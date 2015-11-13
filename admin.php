@@ -42,7 +42,7 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 <title>CORAL Authentication</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
-<link rel="SHORTCUT ICON" href="images/clownfishfavicon.ico" />
+<link rel="SHORTCUT ICON" href="images/favicon.ico" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script type="text/javascript" src="js/plugins/jquery.js"></script>
 <script type="text/javascript" src="js/plugins/thickbox.js"></script>
