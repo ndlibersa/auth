@@ -1,10 +1,13 @@
 <?php
 require_once("classes/DBService.php");
 require_once("classes/Postdata.php");
+require_once("classes/Util.php");
+
 $db = new DBService;
 $database = new Postdata;
 $ldap = new Postdata;
 $general = new Postdata;
+$admin = new Postdata;
 
 //this script runs entire installation process in 5 steps
 
@@ -122,6 +125,15 @@ if ($general->step == "3"){
 	if (!$database->acquire('dbpass'))
 		$errorMessage[] = 'Password is required';
 
+	if (!$admin->acquire('coral_username'))
+		$errorMessage[] = 'CORAL Admin Username is required';
+	if (!$admin->acquire('coral_password'))
+		$errorMessage[] = 'CORAL Admin Password is required';
+
+	$passwordPrefix = Util::randomString(45);
+	$password 		= Util::hashString('sha512', $passwordPrefix . $admin->coral_password);
+	$create_admin_query = "INSERT INTO `User` VALUES ('$admin->coral_username','$password','$passwordPrefix','Y')";
+
 	if (!$general->acquire('session_timeout'))
 		$errorMessage[] = 'Session timeout is required';
 
@@ -150,9 +162,10 @@ if ($general->step == "3"){
 	//next check that the database exists
 	} else if ($errmsg = $db->selectDB("$database->dbname")) {
 		$errorMessage[] = $errmsg;
-
+	} else if (!$db->query($create_admin_query)) {
+		$errorMessage[] = "Failed to create CORAL Admin";
 	//passed db host, name check, test that user can select from Auth database
-	} else if (!$db->query("SELECT loginID FROM $database->dbname.User WHERE loginID like '%coral%';")){
+	} else if (!$db->query("SELECT loginID FROM $database->dbname.User WHERE loginID like '%$admin->coral_username%';")){
 		$errorMessage[] = "Unable to select from the User table in database '$database->dbname' with user '$database->dbuser'.  Error: ".$db->error();
 	}
 
@@ -348,6 +361,12 @@ if ($general->step == "3"){
 	if (!isset($general->session_timeout))
 		$general->session_timeout='3600';
 
+	if (!isset($admin->coral_username))
+		$admin->coral_username = 'coral';
+
+	if (!isset($admin->coral_password))
+		$admin->coral_password = 'admin';
+
 	$ldap->acquire('ldap_enabled',false,true);
 	$ldap->acquire('ldap_host');
 	$ldap->acquire('ldap_port');
@@ -372,6 +391,8 @@ if ($general->step == "3"){
 			<?php $data=array(
 				array('text','Database Username','dbuser',$database->dbuser),
 				array('password','Database Password',"dbpass",$database->dbpass),
+				array('text','CORAL - Admin Username','coral_username',$admin->coral_username),
+				array('password','CORAL - Admin Password','coral_password',$admin->coral_password),
 				array("text",'Session Timeout - in seconds',"session_timeout",$general->session_timeout)
 			);
 			foreach ($data as $vals) {?>
