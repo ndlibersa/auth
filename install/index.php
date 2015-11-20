@@ -181,6 +181,7 @@ if ($general->step == "3"){
 			$iniData[] = "password = \"$database->dbpass\"";
 
             $iniData[] = "\n[ldap]";
+			$iniData[] = "ldap_enabled = \"".($ldap->ldap_enabled?'Y':'N')."\"";
 			$iniData[] = "host = \"$ldap->ldap_host\"";
 			$iniData[] = "port = \"$ldap->ldap_port\"";
 			$iniData[] = "search_key = \"$ldap->ldap_search_key\"";
@@ -294,10 +295,10 @@ if ($general->step == "3"){
 //second step - ask for DB info to run DDL
 } else if ($general->step == '2') {
 
-	if (!isset($dbhost)) $dbhost='localhost';
-	if (!isset($dbname)) $dbname='coral_auth_prod';
-    if (!isset($dbuser)) $dbuser = "";
-    if (!isset($dbpass)) $dbpass = "";
+	if (!isset($database->dbhost)) $database->dbhost='localhost';
+	if (!isset($database->dbname)) $database->dbname='coral_auth_prod';
+    if (!isset($database->dbuser)) $database->dbuser = "";
+    if (!isset($database->dbpass)) $database->dbpass = "";
 	?>
 		<form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
 		<h3>MySQL info with permissions to create tables</h3>
@@ -312,10 +313,10 @@ if ($general->step == "3"){
 		?>
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 			<?php $data=array(
-				array('text','Database Host','dbhost',$dbhost),
-				array('text','Database Schema Name','dbname',$dbname),
-				array('text','Database Username','dbuser',$dbuser),
-				array('password','Database Password',"dbpass",$dbpass)
+				array('text','Database Host','dbhost',$database->dbhost),
+				array('text','Database Schema Name','dbname',$database->dbname),
+				array('text','Database Username','dbuser',$database->dbuser),
+				array('password','Database Password',"dbpass",$database->dbpass)
 			);
 			foreach ($data as $vals) { ?>
 			<tr>
@@ -344,9 +345,16 @@ if ($general->step == "3"){
 //third step - ask for DB info to log in from CORAL
 } else if ($general->step == '3') {
 
-	if (!isset($session_timeout)) $session_timeout='3600';
+	if (!isset($general->session_timeout))
+		$general->session_timeout='3600';
 
-	$ldap_enabled = isset($_POST['ldap_enabled'])? true:false;
+	$ldap->acquire('ldap_enabled',false,true);
+	$ldap->acquire('ldap_host');
+	$ldap->acquire('ldap_port');
+	$ldap->acquire('ldap_search_key');
+	$ldap->acquire('ldap_base_dn');
+	$ldap->acquire('ldap_bind_account');
+	$ldap->acquire('ldap_bind_password');
 
 	?>
 		<form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
@@ -357,14 +365,14 @@ if ($general->step == "3"){
 			<li><?php echo implode("</li>\n<li>",$errorMessage)?></li>
 			</ul></span>
 		<?php } ?>
-		<input type="hidden" name="dbhost" value='<?php echo $dbhost?>'>
-		<input type="hidden" name="dbname" value="<?php echo $dbname?>">
+		<input type="hidden" name="dbhost" value='<?php echo $database->dbhost?>'>
+		<input type="hidden" name="dbname" value="<?php echo $database->dbname?>">
 
 		<table width="100%" border="0" cellspacing="0" cellpadding="2">
 			<?php $data=array(
-				array('text','Database Username','dbuser',$dbuser),
-				array('password','Database Password',"dbpass",$dbpass),
-				array("text",'Session Timeout - in seconds',"session_timeout",$session_timeout)
+				array('text','Database Username','dbuser',$database->dbuser),
+				array('password','Database Password',"dbpass",$database->dbpass),
+				array("text",'Session Timeout - in seconds',"session_timeout",$general->session_timeout)
 			);
 			foreach ($data as $vals) {?>
 			<tr>
@@ -382,23 +390,23 @@ if ($general->step == "3"){
 			<tr>
 				<td>&nbsp;Enable LDAP</td>
 				<td>
-					<input type="checkbox" id="ldap_enabled" name="ldap_enabled" size="30" <?php echo $ldap_enabled?'checked="true"':''?> onclick="ShowLDAP()">
+					<input type="checkbox" id="ldap_enabled" name="ldap_enabled" size="30" <?php echo $ldap->ldap_enabled?'checked="true"':''?> onclick="ShowLDAP()">
 				</td>
 			</tr>
 
 			<?php $data=array(
-				array('text',    'LDAP Host',         "ldap_host",         empty($_POST['ldap_host'])?'':$_POST['ldap_host']),
-				array("text",    'LDAP Port',         "ldap_port",         empty($_POST['ldap_port'])?'':$_POST['ldap_port']),
-				array("text",    'LDAP Search Key',   "ldap_search_key",   empty($_POST['ldap_search_key'])?'':$_POST['ldap_search_key']),
-				array("text",    'LDAP Base DN',      "ldap_base_dn",      empty($_POST['ldap_base_dn'])?'':$_POST['ldap_base_dn']),
-				array("text",    'LDAP Bind Account', "ldap_bind_account", empty($_POST['ldap_bind_account'])?'':$_POST['ldap_bind_account']),
-				array("password",'LDAP Bind Password',"ldap_bind_password",empty($_POST['ldap_bind_password'])?'':$_POST['ldap_bind_password'])
+				array('text',    'LDAP Host',         "ldap_host",         $ldap->ldap_host),
+				array("text",    'LDAP Port',         "ldap_port",         $ldap->ldap_port),
+				array("text",    'LDAP Search Key',   "ldap_search_key",   $ldap->ldap_search_key),
+				array("text",    'LDAP Base DN',      "ldap_base_dn",      $ldap->ldap_base_dn),
+				array("text",    'LDAP Bind Account', "ldap_bind_account", $ldap->ldap_bind_account),
+				array("password",'LDAP Bind Password',"ldap_bind_password",$ldap->ldap_bind_password)
 			);
 			foreach ($data as $vals) {?>
 			<tr>
                 <td>&nbsp;<?php echo $vals[1]?></td>
                 <td>
-                    <input type="<?php echo $vals[0]?>" name="<?php echo $vals[2]?>" class="ldap" size="30" value="<?php echo $vals[3]?>" <?php echo $ldap_enabled?'':'disabled="disabled"'?>>
+                    <input type="<?php echo $vals[0]?>" name="<?php echo $vals[2]?>" class="ldap" size="30" value="<?php echo $vals[3]?>" <?php echo $ldap->ldap_enabled?'':'disabled="disabled"'?>>
                 </td>
             </tr>
 			<?php } ?>
