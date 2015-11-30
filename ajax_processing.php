@@ -65,8 +65,6 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 			}
 
 			break;
-	echo "HERE2";
-
 
 		case 'deleteUser':
 			$loginID = $_GET['loginID'];
