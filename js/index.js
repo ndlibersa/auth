@@ -16,6 +16,11 @@
 */
 
 
+var gt = new Gettext({ 'domain' : 'messages' });//gt = new Gettext({ 'domain' : 'messages' });
+function _(msgid) {
+    return gt.gettext(msgid);
+}
+
 $(document).ready(function(){
 	     
 });
@@ -32,7 +37,7 @@ $("#reportID").change(function () {
 function updateParms() {
 
   	if ($("#reportID").val() != ""){
-	  $("#div_parm").html("<br /><label for=''>&nbsp;</label><img src='images/circle.gif'>  Refreshing Contents...");
+	  $("#div_parm").html("<br /><label for=''>&nbsp;</label><img src='images/circle.gif'>  "+_("Refreshing Contents..."));
 	  $.ajax({
 		 type:       "GET",
 		 url:        "ajax_htmldata.php",

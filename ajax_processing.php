@@ -74,7 +74,7 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 
 			try {
 				$dUser->delete();
-				echo "User successfully deleted.";
+				echo _("User successfully deleted.");
 			} catch (Exception $e) {
 				echo $e->getMessage();
 			}
@@ -86,7 +86,7 @@ if (($user->isAdmin) && ($user->getOpenSession())){
 
 
 		default:
-		   echo "Action " . $action . " not set up!";
+		   echo _("Action ") . $action . _(" not set up!");
 		   break;
 
 	}
