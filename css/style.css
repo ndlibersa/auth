@@ -380,3 +380,11 @@ a#addUser:hover {
 .bordered .smallDarkRedText {
      margin-bottom: 10px !important;
 }
+
+p.fontText {
+    margin-top: 10px;
+}
+
+.boxRight select#lang {
+     float: none;
+}
