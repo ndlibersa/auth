@@ -14,6 +14,13 @@ body {
  padding: 0;
 }
 
+.footer {
+height: 2em;
+font-size:80%;
+color:#526972;
+text-align:center;
+width:100%;
+}
 
 .smallText{
 	font-size:0.8em;
