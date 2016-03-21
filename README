@@ -8,6 +8,16 @@ For the manual install, refer to the Technical Documentation available on http:/
 
 
 **************************
+Changelog 1.1.0
+*   LDAP support
+*   LDAP bind accounts
+*   Translation support
+*   French Translation
+*   Changed deprecated mysql functions to mysqli functions
+*   Misc. bug fixes
+
+
+**************************
 License / Copyright notices
 
 Copyright (c) 2012 University of Notre Dame

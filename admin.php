@@ -159,8 +159,8 @@ if (isset($user) && ($user->isAdmin) && ($user->getOpenSession())){
 </script>
 <script type="text/javascript" src="js/admin.js"></script>
 
-</body>
-</html>
+<?php include 'templates/footer.php'; ?>
+
 
 
 <?php
