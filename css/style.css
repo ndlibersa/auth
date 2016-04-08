@@ -36,10 +36,9 @@ label{
  margin-top: 5px;
 }
 
-input, select, multiple, textarea{
+input, select, multiple, textarea {
  float: left;
  margin-top: 5px;
- cursor: pointer;
 }
 
 
@@ -309,15 +308,45 @@ label:nth-of-type(3) {
      color: #ccc;
 }
 
-/*--- New Custom CSS ---*/
-
 #login-form {
      margin-top: 20px;
+     text-align: center;
+}
+
+#login-form label {
+     width: 100%;
+     margin: 0;
+     font-size: 14px;
+}
+
+#login-form input {
+     float: none;
+     margin-bottom: 10px;
+}
+
+#login-form .smallText {
+     font-size: 12px;
+}
+
+#login-form #loginbutton {
+    color: #FFFFFF;
+    font-family: "Arial", sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background: #1b76a9;
+    border: none;
+    padding: 5px 10px;
+    text-transform: capitalize;
+    min-width: 60px;
+    margin-top: 10px;
+}
+
+#login-form #loginbutton:hover {
+    cursor: pointer;
 }
 
 #login-form label:nth-of-type(1) {
-     margin: 110px 0 15px 0 !important;
-     text-align: center !important;
+     margin-bottom: 15px !important;
 }
 
 a#admin-link:before {
@@ -382,7 +411,8 @@ a#addUser:hover {
 }
 
 p.fontText {
-    margin-top: 10px;
+    margin-top: 15px;
+    font-size: 14px;
 }
 
 .boxRight select#lang {
