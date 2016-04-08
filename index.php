@@ -198,19 +198,18 @@ if(array_key_exists('admin', $_GET)){
 	<br />
 
 
-	<div style="width:418px; height:307px;background-image:url('images/authpage.gif');background-repeat:no-repeat;text-align:right;" id="login-form">
-		<label style='text-align:left;width:100%;margin-top:100px;font-weight:normal;'><span class='smallerText'><?php echo $message; ?></span><span class='smallDarkRedText'><?php echo $errorMessage; ?></span></label><br />
-		<label for='loginID' style='margin-top:10px;'><?= _("Login ID:")?>&nbsp;&nbsp;</label>
-		<input type='text' id='loginID' name='loginID' value="<?php echo $inputLoginID; ?>" style='margin-top:10px;width:170px;' />
+	<div style="width:418px; height:307px;background-image:url('images/authpage.gif');background-repeat:no-repeat;" id="login-form">
+		<label style='width:100%;margin-top:100px;font-weight:normal;'><span class='smallerText'><?php echo $message; ?></span><span class='smallDarkRedText'><?php echo $errorMessage; ?></span></label><br />
+		<label for='loginID'><?= _("Login ID:")?></label>
+		<input type='text' id='loginID' name='loginID' value="<?php echo $inputLoginID; ?>" />
 		<br />
-		<label for='password' style='margin-bottom:15px;'><?= _("Password:")?>&nbsp;&nbsp;</label>
-		<input type='password' id='password' name='password' value='' style='width:170px;margin-bottom:15px;' />
+		<label for='password'><?= _("Password:")?></label>
+		<input type='password' id='password' name='password' value='' />
 		<br />
-		<label for='remember'>&nbsp;</label>
-		<input type='checkbox' id='remember' name='remember' value='Y' style='margin:1px 0px 0px 0px; padding:0px; height:0.8em;' <?php echo $rememberChecked; ?> /><span style='float:left;' class='smallText'>&nbsp;<?= _("Remember my login ID")?></span>
+<!-- 		<label for='remember'>&nbsp;</label> -->
+		<input type='checkbox' id='remember' name='remember' value='Y' style='margin:1px 5px 0px 0px; padding:0px;' <?php echo $rememberChecked; ?> /><span class='smallText'><?= _("Remember my login ID")?></span>
 
 		<br />
-		<label for='loginbutton' style='margin-top:17px;'>&nbsp;</label>
 		<input type="submit" value="<?= _('Login')?>" id="loginbutton" class="loginButton" style='margin-top:17px;' />
 
 	</div>
