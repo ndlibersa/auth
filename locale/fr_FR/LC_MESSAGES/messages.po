@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
 "POT-Creation-Date: 2015-05-15 14:49+0100\n"
-"PO-Revision-Date: 2015-07-27 18:30+0100\n"
+"PO-Revision-Date: 2016-04-05 16:29+0100\n"
 "Last-Translator: Paul Poulain <paul.poulain@biblibre.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: /var/www/Coral/auth\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -30,9 +30,10 @@ msgid ""
 "JavaScript is either disabled or not supported by your browser. To use "
 "CORAL, enable JavaScript by changing your browser options, then"
 msgstr ""
-"JavaScript doit être activé pour utiliser CORAL. Or JavaScript est "
-"désactivé ou n'est pas supporté par votre navigateur. Pour utiliser CORAL, "
-"activez JavaScript en modifiant la configuration de votre navigateur, puis"
+"JavaScript doit être activé pour utiliser CORAL. Cependant, il semble que "
+"JavaScript soit désactivé ou n'est pas supporté par votre navigateur web. "
+"Pour utiliser CORAL, activez JavaScript en modifiant les options de votre "
+"navigateur, puis"
 
 #: admin.php:66 index.php:192
 msgid "try again"
@@ -45,20 +46,20 @@ msgstr "Utilisateurs"
 #: admin.php:81
 msgid "Login ID must match the login ID set up in the modules"
 msgstr ""
-"Le nom d'utilisateur doit être identique au nom d'utilisateur utilisé dans "
-"les modules"
+"Le nom d'utilisateur doit être identique au nom d'utilisateur paramétré "
+"dans les modules"
 
 #: admin.php:87
 msgid "Processing..."
-msgstr "En traitement ..."
+msgstr "Traitement en cours..."
 
 #: admin.php:91 index.php:217
 msgid "Change language:"
-msgstr "Changer la langue:"
+msgstr "Modifier la langue :"
 
 #: admin.php:107 index.php:233
 msgid "Invalid translation route!"
-msgstr "Le chemin vers les traductions n'est pas valide!"
+msgstr "Chemin vers les traductions invalide !"
 
 #: admin.php:132
 msgid "Login page"
@@ -70,15 +71,15 @@ msgstr "Il y a eu un problème avec la base de données : "
 
 #: admin/classes/common/LdapPerson.php:34
 msgid "Could not connect to "
-msgstr "Impossible de se connecter à&nbsp;:"
+msgstr "Impossible de se connecter à "
 
 #: admin/classes/common/Object.php:63
 msgid "Cannot set value for undefined key ("
-msgstr "Impossible d'assigner une clé indéfinie ("
+msgstr "Impossible d'attribuer une valeur à une clé indéfinie ("
 
 #: admin/classes/common/Object.php:72
 msgid "Cannot get value for undefined key ("
-msgstr "Impossible de récupérer une clé indéfinie ("
+msgstr "Impossible d'obtenir la valeur d'une clé indéfinie ("
 
 #: admin/classes/domain/User.php:82 admin/classes/domain/User.php:89
 msgid "Could not connect to LDAP server."
@@ -90,15 +91,15 @@ msgid ""
 "administrator."
 msgstr ""
 "Il y a un problème avec la configuration LDAP, contactez votre "
-"administrateur."
+"administrateur de serveur."
 
 #: ajax_forms.php:43
 msgid "Edit User"
-msgstr "Modifier utilisateur"
+msgstr "Modifier un utilisateur"
 
 #: ajax_forms.php:43
 msgid "Add New User"
-msgstr "Nouvel utilisateur"
+msgstr "Ajouter un nouvel utilisateur"
 
 #: ajax_forms.php:56
 msgid "Login ID"
@@ -106,7 +107,7 @@ msgstr "Nom d'utilisateur"
 
 #: ajax_forms.php:58
 msgid "Enter password for changes only"
-msgstr "Entrez un mot de passe seulement pour le modifier"
+msgstr "Entrez un mot de passe uniquement pour les modifications"
 
 #: ajax_forms.php:59
 msgid "New "
@@ -122,11 +123,11 @@ msgstr "Re-tapez le mot de passe"
 
 #: ajax_forms.php:65
 msgid "Admin?"
-msgstr "Admin?"
+msgstr "Admin ?"
 
 #: ajax_forms.php:77
 msgid "submit"
-msgstr "Valider"
+msgstr "Envoyer"
 
 #: ajax_forms.php:78
 msgid "cancel"
@@ -138,47 +139,47 @@ msgstr "Action "
 
 #: ajax_forms.php:114 ajax_htmldata.php:75 ajax_processing.php:89
 msgid " not set up!"
-msgstr "Non établi"
+msgstr " non-défini !"
 
 #: ajax_htmldata.php:53
 msgid "edit password or admin status"
-msgstr "modifier le mot de passe ou le statut d`admin"
+msgstr "modifier le mot de passe ou le statut administrateur"
 
 #: ajax_htmldata.php:54
 msgid "remove"
-msgstr "Effacer"
+msgstr "Retirer"
 
 #: ajax_htmldata.php:60 ajax_htmldata.php:64
 msgid "add new user"
-msgstr "Ajouter utilisateur"
+msgstr "Ajouter un nouvel utilisateur"
 
 #: ajax_processing.php:77
 msgid "User successfully deleted."
-msgstr "L'utilisateur a été effacé."
+msgstr "Utilisateur supprimé avec succès."
 
 #: index.php:55
 msgid "You are successfully logged out of the system."
-msgstr "Vous êtes déconnecté du système."
+msgstr "Vous êtes à présent déconnecté du système."
 
 #: index.php:86
 msgid "Invalid login ID.  Please try again."
-msgstr "Nom d'utilisateur incorrect, réessayez."
+msgstr "Nom d'utilisateur invalide. Veuillez réessayer à nouveau."
 
 #: index.php:91
 msgid "Invalid password.  Please try again."
-msgstr "Mot de passe incorrect, réessayez."
+msgstr "Mot de passe invalide. Veuillez réessayer à nouveau."
 
 #: index.php:107
 msgid "You are already logged in as "
-msgstr "Vous êtes déjà connecté comme "
+msgstr "Vous êtes déjà connecté en tant que "
 
 #: index.php:107
 msgid "You may log in as another user below,"
-msgstr "Vous devez vous connecter sous un autre compte,"
+msgstr "Vous pouvez vous connecter sous un autre compte ci-dessous,"
 
 #: index.php:107
 msgid "return"
-msgstr "Retour"
+msgstr "Retourner"
 
 #: index.php:107
 msgid "or"
@@ -186,11 +187,11 @@ msgstr "ou"
 
 #: index.php:107
 msgid "logout"
-msgstr "déconnecter"
+msgstr "Déconnectez-vous"
 
 #: index.php:128
 msgid "Please enter login credentials to sign in."
-msgstr "Merci de saisir vos identifiants"
+msgstr "Merci d'entrer vos identifiants de connexion pour ouvrir une session."
 
 #: index.php:136
 msgid "Your session has timed out."
@@ -198,31 +199,32 @@ msgstr "Votre session a expiré."
 
 #: index.php:145
 msgid "You do not have permission to enter."
-msgstr "Vous n'avez pas l'autorisation de faire cela."
+msgstr "Vous n'avez pas les autorisations requises pour accéder au site."
 
 #: index.php:145
 msgid "Please contact an administrator."
-msgstr "Merci de contacter l'administrateur."
+msgstr "Merci de contacter un administrateur."
 
 #: index.php:155
 msgid "You must log in before accessing the admin page."
-msgstr "Vous devez vous identifier avant d'accéder à cette page."
+msgstr ""
+"Vous devez vous identifier avant d'accéder à cette page d'administration."
 
 #: index.php:202
 msgid "Login ID:"
-msgstr "Nom d'utilisateur:"
+msgstr "Nom d'utilisateur :"
 
 #: index.php:205
 msgid "Password:"
-msgstr "Mot de passe:"
+msgstr "Mot de passe :"
 
 #: index.php:209
 msgid "Remember my login ID"
-msgstr "Mémoriser mon nom d'utilisateur"
+msgstr "Mémoriser mes identifiants de connexion"
 
 #: index.php:213
 msgid "Login"
-msgstr "Connexion"
+msgstr "Se connecter"
 
 #: index.php:258
 msgid "Admin page"
@@ -234,19 +236,19 @@ msgstr "Les mots de passe ne correspondent pas"
 
 #: js/admin.js:73
 msgid "Password is required"
-msgstr "Le mot de passe est nécessaire"
+msgstr "Le mot de passe est obligatoire"
 
 #: js/admin.js:78
 msgid "UserID is required"
-msgstr "Le nom d'utilisateur est nécessaire"
+msgstr "Le nom d'utilisateur est obligatoire"
 
 #: js/admin.js:89
 msgid "Do you really want to delete this user?"
-msgstr "Voulez-vous vraiment supprimer cet utilisateur?"
+msgstr "Voulez-vous vraiment supprimer cet utilisateur ?"
 
 #: js/index.js:40
 msgid "Refreshing Contents..."
-msgstr "Rechargements des contenus..."
+msgstr "Actualisation des contenus en cours..."
 
 #~ msgid "Spanish"
 #~ msgstr "Espagnol"
