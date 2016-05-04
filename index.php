@@ -94,6 +94,7 @@ if(array_key_exists('logout', $_GET)){
 
 			//login succeeded, perform redirect
 			header('Location: ' . $service) ;
+			exit; //PREVENT SECURITY HOLE
 
 		}
 	}

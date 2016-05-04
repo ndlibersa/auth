@@ -170,8 +170,10 @@ if (isset($user) && ($user->isAdmin) && ($user->getOpenSession())){
 
 	if (isset($user) && $user->getOpenSession()){
 		header('Location: index.php?service=admin.php&invalid');
+        exit; //PREVENT SECURITY HOLE
 	}else{
 		header('Location: index.php?service=admin.php&admin');
+        exit; //PREVENT SECURITY HOLE
 	}
 }
 
