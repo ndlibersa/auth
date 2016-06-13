@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: messages\n"
-"POT-Creation-Date: 2015-05-15 14:49+0100\n"
-"PO-Revision-Date: 2016-04-05 16:29+0100\n"
+"POT-Creation-Date: 2016-06-13 13:00-0600\n"
+"PO-Revision-Date: 2016-06-13 13:07-0600\n"
 "Last-Translator: Paul Poulain <paul.poulain@biblibre.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -10,21 +10,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7\n"
-"X-Poedit-Basepath: /var/www/Coral/auth\n"
+"X-Poedit-Basepath: ../../..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: /var/www/Coral/auth/js/plugins\n"
 
-#: LangCodes.php:16
-msgid "French"
-msgstr "Français"
+#: js/admin.js:67
+msgid "Passwords do not match"
+msgstr "Les mots de passe ne correspondent pas"
 
-#: LangCodes.php:17
-msgid "English"
-msgstr "Anglais"
+#: js/admin.js:73
+msgid "Password is required"
+msgstr "Le mot de passe est obligatoire"
 
-#: admin.php:66 index.php:192
+#: js/admin.js:78
+msgid "UserID is required"
+msgstr "Le nom d'utilisateur est obligatoire"
+
+#: js/admin.js:89
+msgid "Do you really want to delete this user?"
+msgstr "Voulez-vous vraiment supprimer cet utilisateur ?"
+
+#: js/index.js:40
+msgid "Refreshing Contents..."
+msgstr "Actualisation des contenus en cours..."
+
+#: admin.php:66 index.php:195
 msgid ""
 "JavaScript must be enabled in order for you to use CORAL. However, it seems "
 "JavaScript is either disabled or not supported by your browser. To use "
@@ -35,33 +46,37 @@ msgstr ""
 "Pour utiliser CORAL, activez JavaScript en modifiant les options de votre "
 "navigateur, puis"
 
-#: admin.php:66 index.php:192
+#: admin.php:66 index.php:195
 msgid "try again"
 msgstr "réessayez"
 
-#: admin.php:80
+#: admin.php:75 index.php:205
+msgid "eRM Authentication"
+msgstr "Authentification eRM"
+
+#: admin.php:82
 msgid "Users"
 msgstr "Utilisateurs"
 
-#: admin.php:81
+#: admin.php:83
 msgid "Login ID must match the login ID set up in the modules"
 msgstr ""
-"Le nom d'utilisateur doit être identique au nom d'utilisateur paramétré "
-"dans les modules"
+"Le nom d'utilisateur doit être identique au nom d'utilisateur paramétré dans "
+"les modules"
 
-#: admin.php:87
+#: admin.php:89
 msgid "Processing..."
 msgstr "Traitement en cours..."
 
-#: admin.php:91 index.php:217
+#: admin.php:93 index.php:226
 msgid "Change language:"
 msgstr "Modifier la langue :"
 
-#: admin.php:107 index.php:233
+#: admin.php:109 index.php:242
 msgid "Invalid translation route!"
 msgstr "Chemin vers les traductions invalide !"
 
-#: admin.php:132
+#: admin.php:134
 msgid "Login page"
 msgstr "Page de connexion"
 
@@ -169,86 +184,72 @@ msgstr "Nom d'utilisateur invalide. Veuillez réessayer à nouveau."
 msgid "Invalid password.  Please try again."
 msgstr "Mot de passe invalide. Veuillez réessayer à nouveau."
 
-#: index.php:107
+#: index.php:108
 msgid "You are already logged in as "
 msgstr "Vous êtes déjà connecté en tant que "
 
-#: index.php:107
+#: index.php:108
 msgid "You may log in as another user below,"
 msgstr "Vous pouvez vous connecter sous un autre compte ci-dessous,"
 
-#: index.php:107
+#: index.php:108
 msgid "return"
 msgstr "Retourner"
 
-#: index.php:107
+#: index.php:108
 msgid "or"
 msgstr "ou"
 
-#: index.php:107
+#: index.php:108
 msgid "logout"
 msgstr "Déconnectez-vous"
 
-#: index.php:128
+#: index.php:129
 msgid "Please enter login credentials to sign in."
 msgstr "Merci d'entrer vos identifiants de connexion pour ouvrir une session."
 
-#: index.php:136
+#: index.php:137
 msgid "Your session has timed out."
 msgstr "Votre session a expiré."
 
-#: index.php:145
+#: index.php:146
 msgid "You do not have permission to enter."
 msgstr "Vous n'avez pas les autorisations requises pour accéder au site."
 
-#: index.php:145
+#: index.php:146
 msgid "Please contact an administrator."
 msgstr "Merci de contacter un administrateur."
 
-#: index.php:155
+#: index.php:156
 msgid "You must log in before accessing the admin page."
 msgstr ""
 "Vous devez vous identifier avant d'accéder à cette page d'administration."
 
-#: index.php:202
+#: index.php:211
 msgid "Login ID:"
 msgstr "Nom d'utilisateur :"
 
-#: index.php:205
+#: index.php:214
 msgid "Password:"
 msgstr "Mot de passe :"
 
-#: index.php:209
+#: index.php:218
 msgid "Remember my login ID"
 msgstr "Mémoriser mes identifiants de connexion"
 
-#: index.php:213
+#: index.php:221
 msgid "Login"
 msgstr "Se connecter"
 
-#: index.php:258
+#: index.php:267
 msgid "Admin page"
 msgstr "Page d'administration"
 
-#: js/admin.js:67
-msgid "Passwords do not match"
-msgstr "Les mots de passe ne correspondent pas"
+#~ msgid "French"
+#~ msgstr "Français"
 
-#: js/admin.js:73
-msgid "Password is required"
-msgstr "Le mot de passe est obligatoire"
-
-#: js/admin.js:78
-msgid "UserID is required"
-msgstr "Le nom d'utilisateur est obligatoire"
-
-#: js/admin.js:89
-msgid "Do you really want to delete this user?"
-msgstr "Voulez-vous vraiment supprimer cet utilisateur ?"
-
-#: js/index.js:40
-msgid "Refreshing Contents..."
-msgstr "Actualisation des contenus en cours..."
+#~ msgid "English"
+#~ msgstr "Anglais"
 
 #~ msgid "Spanish"
 #~ msgstr "Espagnol"
