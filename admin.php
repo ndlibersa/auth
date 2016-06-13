@@ -42,6 +42,7 @@ if (isset($user) && ($user->isAdmin) && ($user->getOpenSession())){
 <link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
 <link rel="SHORTCUT ICON" href="images/favicon.ico" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:100,400,300,600,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/plugins/jquery.js"></script>
 <script type="text/javascript" src="js/plugins/thickbox.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
@@ -69,9 +70,11 @@ if (isset($user) && ($user->isAdmin) && ($user->getOpenSession())){
 
 	<br />
 
-
-	<div style="width:418px;height:89px;margin-top:20px;background-image:url('images/authtitle.gif');background-repeat:no-repeat;">
-	</div>
+	<div id="title-div">
+        <div id="img-title"><img src="images/authtitle.png" /></div>
+        <div id="text-title"><?php echo _("eRM Authentication"); ?></div>
+        <div class="clear"></div>
+    </div>
 
 	<div class='bordered' style='width:416px;'>
 

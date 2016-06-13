@@ -418,3 +418,32 @@ p.fontText {
 .boxRight select#lang {
      float: none;
 }
+
+/*--- Allow Browser to Scroll When Modal Appears ---*/
+
+#TB_window {
+    position: absolute !important;
+    margin-top: 100px !important;
+    top: 0 !important;
+}
+
+/*--- Modify Login/Admin Title to Allow for Changes to Language ---*/
+
+#title-div {
+    background: #306d9c;
+    width: 418px;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    padding: 20px 0;
+    font-size: 24px;
+}
+
+#img-title {
+    margin-bottom: 5px;
+}
+
+#login-content {
+    border: solid 1px #306d9c;
+    padding: 20px;
+}

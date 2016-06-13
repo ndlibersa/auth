@@ -171,6 +171,7 @@ if(array_key_exists('admin', $_GET)){
 <link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen" />
 <link rel="SHORTCUT ICON" href="images/favicon.ico" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:100,400,300,600,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/plugins/jquery.js"></script>
 <script type="text/javascript" src="js/plugins/thickbox.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
@@ -198,20 +199,27 @@ if(array_key_exists('admin', $_GET)){
 
 	<br />
 
+	<div style="width:418px;" id="login-form">
+		<div id="title-div">
+	        <div id="img-title"><img src="images/authtitle.png" /></div>
+	        <div id="text-title"><?php echo _("eRM Authentication"); ?></div>
+	        <div class="clear"></div>
+    	</div>
 
-	<div style="width:418px; height:307px;background-image:url('images/authpage.gif');background-repeat:no-repeat;" id="login-form">
-		<label style='width:100%;margin-top:100px;font-weight:normal;'><span class='smallerText'><?php echo $message; ?></span><span class='smallDarkRedText'><?php echo $errorMessage; ?></span></label><br />
-		<label for='loginID'><?= _("Login ID:")?></label>
-		<input type='text' id='loginID' name='loginID' value="<?php echo $inputLoginID; ?>" />
-		<br />
-		<label for='password'><?= _("Password:")?></label>
-		<input type='password' id='password' name='password' value='' />
-		<br />
-<!-- 		<label for='remember'>&nbsp;</label> -->
-		<input type='checkbox' id='remember' name='remember' value='Y' style='margin:1px 5px 0px 0px; padding:0px;' <?php echo $rememberChecked; ?> /><span class='smallText'><?= _("Remember my login ID")?></span>
+		<div id="login-content">
+			<label style='width:100%;font-weight:normal;'><span class='smallerText'><?php echo $message; ?></span><span class='smallDarkRedText'><?php echo $errorMessage; ?></span></label><br />
+			<label for='loginID'><?= _("Login ID:")?></label>
+			<input type='text' id='loginID' name='loginID' value="<?php echo $inputLoginID; ?>" />
+			<br />
+			<label for='password'><?= _("Password:")?></label>
+			<input type='password' id='password' name='password' value='' />
+			<br />
+	<!-- 		<label for='remember'>&nbsp;</label> -->
+			<input type='checkbox' id='remember' name='remember' value='Y' style='margin:1px 5px 0px 0px; padding:0px;' <?php echo $rememberChecked; ?> /><span class='smallText'><?= _("Remember my login ID")?></span>
 
-		<br />
-		<input type="submit" value="<?= _('Login')?>" id="loginbutton" class="loginButton" style='margin-top:17px;' />
+			<br />
+			<input type="submit" value="<?= _('Login')?>" id="loginbutton" class="loginButton" style='margin-top:17px;' />
+		</div>
 
 	</div>
 	<div class='boxRight'>
