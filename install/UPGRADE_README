@@ -1,0 +1,10 @@
+Please Note:  If you are installing CORAL Organizations for the first time you
+do not need to run this upgrade process.
+
+The following file contains notes on specific upgrades.  For full instructions
+on how to run an upgrade, refer to the technical documentation available at
+http://coral-erm.org/documentation.
+
+UPGRADING FROM AUTH 1.1 TO 1.1.1
+--------------------------------
+No database changes were made, just update the code as usual. Don't forget to make a backup copy first.   
